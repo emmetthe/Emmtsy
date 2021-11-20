@@ -11,9 +11,10 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-  validates :email, presence: {message: "Please enter a valid email"}, uniqueness: true
+  # , email: true
+  validates :email, presence: true, uniqueness: true
   validates :username, presence: {message: "Please enter a username"}
-  validates :password_digest, presence: true 
+  validates :password_digest, :session_token, presence: true 
   validates :password, length: { minimum: 6, allow_nil: true} 
 
   attr_reader :password 
@@ -52,9 +53,23 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
+  
+  private
+
+  def new_session_token
+    SecureRandom.urlsafe_base64
+  end
 
   def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
+    generate_unique_session_token unless self.session_token
+  end
+
+  def generate_unique_session_token
+    self.session_token = new_session_token
+    while User.find_by(session_token: self.session_token)
+      self.session_token = new_session_token
+    end
+    self.session_token
   end
 
 end

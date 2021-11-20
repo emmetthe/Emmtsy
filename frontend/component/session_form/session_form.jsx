@@ -25,17 +25,19 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    let { errors } = this.props;
+    if (typeof errors === 'undefined') {
+      return null;
+    }
+    return (
+      <div className="session-errors">
+        {errors.map((error, i) => (
+          <div key={i}>{error}</div>
+        ))}
+      </div>
+    );
+  }
 
   demoLogin(e) {
     e.preventDefault();
@@ -43,16 +45,15 @@ class SessionForm extends React.Component {
       email: 'demo@gmail.com',
       password: '123456'
     };
-    this.props.processForm(demo)
+    this.props.processForm(demo);
   }
 
   render() {
-
     let firstName;
     if (this.props.formType === 'Register') {
       firstName = (
         <div>
-          <label className="signup-label">
+          <label className="form-label username-label">
             Username:
             <input type="text" value={this.state.username} onChange={this.update('username')} className="form-input"></input>
           </label>
@@ -65,16 +66,18 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="form-box">
           <br />
           Please {this.props.formType} or {this.props.navLink}
-          {/* {this.renderErrors()} */}
+
+          {this.renderErrors()}
+
           <div className="form">
             <br />
-            <label>
+            <label className="form-label email-label">
               Email:
-              <input type="text" value={this.state.email} onChange={this.update('email')} className="form-input" />
+              <input type="email" value={this.state.email} onChange={this.update('email')} className="form-input" />
             </label>
             <br />
             {firstName}
-            <label>
+            <label className="form-label password-label">
               Password:
               <input type="password" value={this.state.password} onChange={this.update('password')} className="form-input" />
             </label>
