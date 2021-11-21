@@ -9,8 +9,8 @@ class Api::CategoriesController < ApplicationController
   end
 
   def create 
-    @category = Category.create!(category_params)
-    if @category.save! 
+    @category = Category.create(category_params)
+    if @category.save 
     else 
       render json: @category.errors.full_messages, status: 401
     end 

@@ -11,7 +11,6 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-  # , email: true
   validates :email, presence: true, uniqueness: true
   validates :username, presence: {message: "Please enter a username"}
   validates :password_digest, :session_token, presence: true 

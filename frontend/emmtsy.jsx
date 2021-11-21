@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './component/root';
 import configureStore from './store/store';
 
-import * as SessionAction from './action/session_actions';
+import * as Action from './action/product_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -14,16 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.login = SessionAction.login;
-  window.logout = SessionAction.logout;
-  window.signup = SessionAction.signup;
+  window.fetchProduct = Action.fetchProduct;
+  window.fetchProducts = Action.fetchProducts;
 
   if (window.currentUser) {
     const preloadedState = {
-      session: { id: window.currentUser.id },
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
-      }
+      },
+      session: { id: window.currentUser.id }
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
