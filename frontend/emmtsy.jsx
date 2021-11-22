@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // tests------------------
   window.store = store;
-  window.getState = store.getState;
   window.dispatch = store.dispatch;
 
   window.fetchProduct = Action.fetchProduct;
-  window.fetchProducts = Action.fetchProducts;
+  window.fetchAllProducts = Action.fetchAllProducts;
+  // ---------------------------
 
   if (window.currentUser) {
     const preloadedState = {
