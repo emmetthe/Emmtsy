@@ -26,3 +26,30 @@
   line-height: 56px;
   font-size: 52px;
 }
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;   
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 6px 36px #22223b;
+  width: 350px;
+}
+
+.exit-modal{
+  cursor: pointer;
+}

@@ -3,18 +3,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup } from '../../action/session_actions';
 import SessionForm from './session_form';
+import { openModal, closeModal } from '../../action/modal_action';
 
-const mapStateToProps = ({errors}) => {
+const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formType: 'Register',
-    navLink: <Link to="/login">Sign In</Link>,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     processForm: (user) => dispatch(signup(user)),
+    modalForm: (
+      <button className="modal-form" onClick={() => dispatch(openModal('Sign in'))}>
+        Sign in
+      </button>
+    ),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

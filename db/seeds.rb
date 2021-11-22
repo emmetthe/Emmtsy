@@ -127,7 +127,7 @@ product4 = Product.create!(
 
 product5 = Product.create!(
   seller_id: user1.id,
-  product_name: "Cows Sweater, Knitted",
+  product_name: "Knitted Cows Sweater",
   description: "Comfy and stylish cows pattern sweater. Brings out a very positive look. Looks perfect for all seasons.",
   price: 42.11,
   category_id: category3.id

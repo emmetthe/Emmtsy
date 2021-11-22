@@ -6,9 +6,11 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
+import Modal from './modal/modal';
 
 const App = () => (
   <div>
+    <Modal />
     <header>
       <Link to="/" className="header-link">
         <h1 className="main-name">Emmtsy</h1>
