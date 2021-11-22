@@ -68,7 +68,7 @@ product1 = Product.create!(
   seller_id: user1.id,
   product_name: 'Personalized Charcuterie Planks and Beer Flights',
   description:
-    'Serve your guests with style and panache with a personalized Charcuterie or Beer Flight Serving Trays.Our cleverly designed Beer Flight Trays hold the wider flared part of the glass for stable carrying and serving. They are designed to hold most any size or shape of beer glass. The smaller Taster Flight Tray holds smaller taster glasses, most any style or shape fits perfectly.',
+    'Serve your guests with style and panache with a personalized Charcuterie or Beer Flight Serving Trays. Our cleverly designed Beer Flight Trays hold the wider flared part of the glass for stable carrying and serving. They are designed to hold most any size or shape of beer glass.',
   price: 57.99,
   category_id: category4.id
 )
@@ -95,7 +95,7 @@ product3 = Product.create!(
   - Fully Programmable
   - Full LED backlighting
   - Controller parts, diodes, and resistors are pre-soldered",
-  price: 550.00,
+  price: 549.99,
   category_id: category1.id
 )
 

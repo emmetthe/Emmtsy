@@ -4,12 +4,11 @@ import { fetchProduct } from '../../action/product_actions';
 
 const mSTP = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.productId],
-  
-  test: console.log(state.entities, 'in container')
+  test: console.log(state,'in show contain', ownProps) 
 });
 
 const mDTP = (dispatch) => ({
-  fetchProduct: (productId) => dispatch(fetchProduct(productId))
+  fetchProduct: (productId) => dispatch(fetchProduct(productId)),
 });
 
 export default connect(mSTP, mDTP)(ProductShow);

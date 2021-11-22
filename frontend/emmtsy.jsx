@@ -7,16 +7,8 @@ import * as Action from './action/product_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  let store = configureStore();
-
-  // tests------------------
-  window.store = store;
-  window.dispatch = store.dispatch;
-
-  window.fetchProduct = Action.fetchProduct;
-  window.fetchAllProducts = Action.fetchAllProducts;
-  // ---------------------------
-
+  let store;
+  
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -29,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
+  
+  // tests------------------
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchProduct = Action.fetchProduct;
+  window.fetchAllProducts = Action.fetchAllProducts;
+  // ---------------------------
   ReactDOM.render(<Root store={store} />, root);
 });

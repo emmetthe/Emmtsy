@@ -11,27 +11,27 @@ class ProductShow extends React.Component {
   }
 
   handleAddToCart() {
-    return 'test';
+    return console.log('cart not implemented');
   }
 
   getRandomNum(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   render() {
-    let randomNum = this.getRandomNum(1, 300);
+    let randomNum = this.getRandomNum(1, 100);
     let randomSale = this.getRandomNum(1, 5000);
     const {product} = this.props;
 
-    console.log(product.product_name, 'inside show')
-
+    if (!product) return null;
+    
     return (
       <div className="product-show-page">
         <div className="product-info">
           <div>
             <p className="product-show-name">{product.product_name}</p>
           </div>
-          {/* <p className="product-show-seller">{product.seller.username}</p> */}
+          {/* <p className="product-show-seller">{NEED SELLER USERNAME}</p> */}
           <div className="rating-sales">
             <p className="sales">{randomSale} sales</p>
           </div>

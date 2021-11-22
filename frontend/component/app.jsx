@@ -16,7 +16,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
-      <Route exact path='/products/:productId' component={ProductShowContainer}/>
+      <Route exact path="/products/:productId" component={ProductShowContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <Route exact path="/" component={ProductIndexContainer} />

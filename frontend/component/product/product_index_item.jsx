@@ -9,12 +9,12 @@ class ProductIndexItem extends React.Component {
   render() {
     const { product } = this.props;
     return (
-      <Link to={`/products/${product.id}`}>
-        <li className="product-index-item">
+      <li className="product-index-item">
+        <Link to={`/products/${product.id}`}>
           <p className="product-name">{product.product_name}</p>
-          <p className="product-price">${product.price}</p>
-        </li>
-      </Link>
+        </Link>
+        <p className="product-price">${product.price}</p>
+      </li>
     );
   }
 }
