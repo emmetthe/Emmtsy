@@ -24,6 +24,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    this.props.closeModal();
   }
 
   renderErrors() {
@@ -46,7 +47,7 @@ class SessionForm extends React.Component {
       email: 'demo@gmail.com',
       password: '123456'
     };
-    this.props.processForm(demo)
+    this.props.processForm(demo);
     this.props.closeModal();
   }
 
@@ -71,13 +72,13 @@ class SessionForm extends React.Component {
     return (
       <div className="session-modal">
         <div className="form-container">
+          {this.props.modalForm}
           <form onSubmit={this.handleSubmit} className="form-box">
             <div className="modal-form">
               <div onClick={this.props.closeModal} className="exit-modal">
                 &times;
               </div>
               <br />
-              {this.props.modalForm}
               {this.renderErrors()}
               <div className="form">
                 <br />
