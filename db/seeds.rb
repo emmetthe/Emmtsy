@@ -28,6 +28,24 @@ user3 = User.create!(
   password: 'joe123'    
 )
 
+user4 = User.create!(
+  username: 'tom',
+  email: 'tom@g.com',
+  password: 'tom123'    
+)
+
+user5 = User.create!(
+  username: 'sdgdfg',
+  email: 'dfggszdg@g.com',
+  password: 'dsfgsdfgdg'    
+)
+
+user6 = User.create!(
+  username: 'testestseset',
+  email: 'testsetset@g.com',
+  password: 'tsetsetsetset'    
+)
+
 category1 = Category.create!(
   category_name: 'Keyboard & Accesories'
 )
@@ -113,4 +131,20 @@ product5 = Product.create!(
   description: "Comfy and stylish cows pattern sweater. Brings out a very positive look. Looks perfect for all seasons.",
   price: 42.11,
   category_id: category3.id
+)
+
+product6 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Personalized Family Figurines",
+  description: 'I create high quality personalized wooden dolls with nice little details from your daily life based on your photos.',
+  price: 123.32,
+  category_id: category6.id
+)
+
+product7 = Product.create!(
+  seller_id: user5.id,
+  product_name: "Anniversary card, Pizza Love",
+  description: "5 X 7 greeting card in plastic, designed & handwritten, then printed on cream heavy card stock, hand folded, with a brown paper envelope",
+  price: 4.99,
+  category_id: category9.id
 )

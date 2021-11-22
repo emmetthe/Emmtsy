@@ -2,8 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.product-index-item{
+.product-index-item {
   display: flex;
   justify-content: space-between;
   margin: 10px;
+}
+
+.product-price {
+  background-color: white;
+  color: inherit;
+  border: 1px solid rgba(34, 34, 34, 0.15) !important;
+  border-radius: 15px;
+  font-size: 13px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
 }

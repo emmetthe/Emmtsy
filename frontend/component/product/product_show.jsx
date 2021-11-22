@@ -24,14 +24,15 @@ class ProductShow extends React.Component {
     const {product} = this.props;
 
     if (!product) return null;
-    
+    if(typeof(product.seller) == 'undefined') return null;
+
     return (
       <div className="product-show-page">
         <div className="product-info">
           <div>
             <p className="product-show-name">{product.product_name}</p>
           </div>
-          {/* <p className="product-show-seller">{NEED SELLER USERNAME}</p> */}
+          <p className="product-show-seller">{product.seller.username}</p>
           <div className="rating-sales">
             <p className="sales">{randomSale} sales</p>
           </div>
