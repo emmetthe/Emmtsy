@@ -27,6 +27,31 @@
   font-size: 52px;
 }
 
+.login-modal {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 24px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 10;
+  position: relative;
+}
+
+.login-modal:hover {
+  background-color: rgba(236, 236, 236, 0.795);
+}
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -43,13 +68,64 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;   
+  background-color: white;
   padding: 30px;
   border-radius: 24px;
   box-shadow: 0 6px 36px #22223b;
   width: 350px;
 }
 
-.exit-modal{
+.exit-modal {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-header {
+  font-size: 20px;
+  line-height: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-submit-button {
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  min-height: 48px;
+  min-width: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 10;
+  color: white;
+  background-color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.modal-form-button {
+  border-width: 2px;
+  border-color: #222222;
+  border-style: solid;
+  border-radius: 24px;
+  background-color: #ffffff;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
   cursor: pointer;
 }

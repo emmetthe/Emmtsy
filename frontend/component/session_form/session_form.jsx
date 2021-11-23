@@ -23,8 +23,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-    this.props.closeModal();
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -52,12 +51,12 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let firstName;
+    let userName;
     if (this.props.formType === 'Register') {
-      firstName = (
+      userName = (
         <div>
           <label className="form-label username-label">
-            Username:
+            Username
             <input type="text" value={this.state.username} onChange={this.update('username')} className="form-input"></input>
           </label>
         </div>
@@ -66,7 +65,7 @@ class SessionForm extends React.Component {
 
     let demoLogin;
     if (this.props.formType === 'Sign in') {
-      demoLogin = <input type="submit" value="Demo User" className="demo-user-button" onClick={this.demoLogin} />;
+      demoLogin = <input type="submit" value="Demo User" className="form-submit-button" onClick={this.demoLogin} />;
     }
 
     return (
@@ -81,19 +80,19 @@ class SessionForm extends React.Component {
               <br />
               {this.renderErrors()}
               <div className="form">
+                <h1 className='form-header'>{this.props.formType}</h1>
                 <br />
                 <label className="form-label email-label">
-                  Email:
+                  Email address
                   <input type="email" value={this.state.email} onChange={this.update('email')} className="form-input" />
                 </label>
-                <br />
-                {firstName}
+                {userName}
                 <label className="form-label password-label">
-                  Password:
+                  Password
                   <input type="password" value={this.state.password} onChange={this.update('password')} className="form-input" />
                 </label>
                 <br />
-                <input className="form-submit" type="submit" value={this.props.formType} />
+                <input className="form-submit-button" type="submit" value={this.props.formType} />
               </div>
             </div>
           </form>
