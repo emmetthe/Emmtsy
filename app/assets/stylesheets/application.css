@@ -99,9 +99,3 @@
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
-
-.session-errors {
-  color: red;
-  padding: 5px;
-  margin: 0;
-}

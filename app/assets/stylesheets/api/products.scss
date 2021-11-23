@@ -2,13 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.product-index-item {
+
+.product-index {
   display: flex;
-  justify-content: space-between;
-  margin: 10px;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.product-price {
+.product-index-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+}
+
+.product-index-price {
   background-color: white;
   color: inherit;
   border: 1px solid rgba(34, 34, 34, 0.15) !important;
@@ -18,4 +28,129 @@
   padding-bottom: 6px;
   padding-left: 9px;
   padding-right: 9px;
+  min-width: 0;
+  width: 30%;
+  text-align: center;
+}
+
+.product-index-name {
+  margin: 10px;
+}
+
+.product-index-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.product-show-page {
+  width: 100%;
+  height: 100%;
+}
+
+.product-info-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  flex-direction: column;
+  height: 100%;
+  float: left;
+  padding: 5px;
+}
+
+.product-show-image {
+  width: 50%;
+  height: 50%;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.product-info-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  float: right;
+  width: 50%;
+  height: 100%;
+  padding: 5px;
+}
+
+.product-show-description {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 400px;
+  height: 300px;
+}
+
+.product-description-box {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+.product-description {
+  top: 20%;
+}
+
+.product-price-stock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-stock {
+  float: right;
+  margin: 10px;
+}
+
+.hot-item-container {
+  float: right;
+  margin: 10px;
+}
+
+.add-item-button {
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  min-height: 48px;
+  min-width: 300px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  background-color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  width: 100%;
+  margin: 5px;
+}
+
+.add-item-button:hover {
+  opacity: 0.9;
+  transform: scale(1.02, 1);
 }

@@ -1,3 +1,4 @@
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -91,6 +92,8 @@ product1 = Product.create!(
   category_id: category4.id
 )
 
+product1.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/charcuterie.jpg'), filename: 'charcuterie.jpg')
+
 product2 = Product.create!(
   seller_id: user3.id,
   product_name: "Personalized Wallet, Engraved",
@@ -148,3 +151,6 @@ product7 = Product.create!(
   price: 4.99,
   category_id: category9.id
 )
+
+photo2 = URI.open("https://emmtsy-seeds.s3.us-west-1.amazonaws.com/pizzacard.jpg")
+product7.photo.attach(io: photo2, filename:"pizzacard.jpg")

@@ -31,7 +31,7 @@ function Modal({ modal, closeModal }) {
 
 const mSTP = (state) => {
   return {
-    modal: state.modal
+    modal: state.ui.modal
   };
 };
 

@@ -21,14 +21,16 @@ export const receiveProductErrors = (errors) => ({
 
 export const fetchProduct = (productId) => (dispatch) => {
   return ProductApiUtil.fetchProduct(productId).then(
-    (product) => dispatch(receiveProduct(product)),
-    (err) => dispatch(receiveProductErrors(err.responseJSON))
+    (product) => dispatch(receiveProduct(product))
+    // ,
+    // (err) => dispatch(receiveProductErrors(err.responseJSON))
   );
 };
 
 export const fetchAllProducts = () => (dispatch) => {
   return ProductApiUtil.fetchProducts().then(
-    (products) => dispatch(receiveProducts(products)),
-    (err) => dispatch(receiveProductErrors(err.responseJSON))
+    (products) => dispatch(receiveProducts(products))
+    // ,
+    // (err) => dispatch(receiveProductErrors(err.responseJSON))
   );
 };

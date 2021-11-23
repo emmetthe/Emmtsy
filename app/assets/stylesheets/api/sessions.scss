@@ -55,8 +55,8 @@
 }
 
 .form-submit-button:hover {
-  opacity: 0.8;
-  transform: scale(1.06, 1.05);
+  opacity: 0.9;
+  transform: scale(1.02, 1);
 }
 
 .session-modal {
@@ -96,4 +96,10 @@
   color: white;
   cursor: pointer;
   transform: scale(1.5, 1.5);
+}
+
+.session-errors {
+  color: red;
+  padding: 5px;
+  margin: 0;
 }
