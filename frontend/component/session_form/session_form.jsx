@@ -50,6 +50,10 @@ class SessionForm extends React.Component {
     this.props.closeModal();
   }
 
+  componentWillUnmount() {
+    this.props.removeErrors();
+  }
+
   render() {
     let userName;
     if (this.props.formType === 'Register') {
@@ -78,9 +82,10 @@ class SessionForm extends React.Component {
                 &times;
               </div>
               <br />
-              {this.renderErrors()}
               <div className="form">
-                <h1 className='form-header'>{this.props.formType}</h1>
+                <h1 className="form-header">{this.props.formType}</h1>
+                <br />
+                {this.renderErrors()}
                 <br />
                 <label className="form-label email-label">
                   Email address
