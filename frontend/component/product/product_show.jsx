@@ -11,7 +11,7 @@ class ProductShow extends React.Component {
   }
 
   handleAddToCart() {
-    return console.log('cart not implemented');
+    return null;
   }
 
   getRandomNum(min, max) {
@@ -21,11 +21,11 @@ class ProductShow extends React.Component {
   render() {
     let randomNum = this.getRandomNum(1, 100);
     let randomSale = this.getRandomNum(1, 5000);
-    const {product} = this.props;
+    const { product } = this.props;
 
     if (!product) return null;
-    if(typeof(product.seller) == 'undefined') return null;
-    
+    if (typeof product.seller == 'undefined') return null;
+
     return (
       <div className="product-show-page">
         <div className="product-info">
@@ -40,7 +40,7 @@ class ProductShow extends React.Component {
             <h4 className="product-description">Description</h4>
             <p className="product-description-box">{product.description}</p>
           </div>
-            <p className="product-in-stock">In Stock</p>
+          <p className="product-in-stock">In Stock</p>
           <div className="product-add-item">
             <button onClick={this.handleAddToCart} className="add-item-button">
               Add to Cart
@@ -55,7 +55,6 @@ class ProductShow extends React.Component {
       </div>
     );
   }
-    
 }
 
 export default ProductShow;
