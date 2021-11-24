@@ -7,6 +7,7 @@ import GreetingContainer from './greeting/greeting_container';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
 import Modal from './modal/modal';
+import HomeContainer from './home/home_container';
 
 const App = () => (
   <div>
@@ -15,13 +16,13 @@ const App = () => (
       <Link to="/" className="header-link">
         <h1 className="main-name">Emmtsy</h1>
       </Link>
-      <GreetingContainer />
     </header>
+      <GreetingContainer />
     <Switch>
       <Route exact path="/products/:productId" component={ProductShowContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <Route exact path="/" component={ProductIndexContainer} />
+      <Route exact path="/" component={HomeContainer} />
     </Switch>
   </div>
 );
