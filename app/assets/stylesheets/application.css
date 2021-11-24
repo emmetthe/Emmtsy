@@ -77,7 +77,12 @@
 }
 
 .home-index-image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   margin: 10px;
+  border-radius: 7px;
+}
+
+.home-index-image:hover {
+  box-shadow: 0 0 8px rgba(184, 184, 184, 0.795);
 }
