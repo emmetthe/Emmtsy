@@ -137,9 +137,7 @@
 }
 
 .modal-form-button {
-  border-width: 2px;
-  border-color: #222222;
-  border-style: solid;
+  border: 1px #222222 solid;
   border-radius: 24px;
   background-color: #ffffff;
   font-weight: bold;
@@ -149,22 +147,21 @@
   line-height: 1.4;
   min-height: 36px;
   min-width: 36px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 9px 15px;
   cursor: pointer;
   float: right;
+  transition: all 0.2s;
 }
 
 .modal-form-button:hover {
-  transform: scale(1.06, 1.05);
+  border-width: 2px;
+  transition: all 0.2s;
 }
 
 .exit-modal {
   position: absolute;
   top: 0%;
-  right: -20%;
+  right: -10%;
   font-size: 25px;
   color: white;
   cursor: pointer;
