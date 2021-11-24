@@ -18,6 +18,20 @@
   padding: 0;
 }
 
+.header-link {
+  display: flex;
+  text-decoration: none;
+  margin: 0;
+  width: 100px;
+}
+
+.logo {
+  color: rgb(241,100,30);
+  padding: 5px;
+  width: 100px;
+  margin: 0;
+}
+
 .home-msg {
   display: flex;
   justify-content: center;

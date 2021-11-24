@@ -10,14 +10,14 @@ import Modal from './modal/modal';
 import HomeContainer from './home/home_container';
 
 const App = () => (
-  <div>
+  <div className="app">
     <Modal />
-    <header>
-      <Link to="/" className="header-link">
-        <h1 className="main-name">Emmtsy</h1>
-      </Link>
-    </header>
-      <GreetingContainer />
+
+    <Link to="/" className="header-link">
+      <h1 className="logo">Emmtsy</h1>
+    </Link>
+
+    <GreetingContainer />
     <Switch>
       <Route exact path="/products/:productId" component={ProductShowContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
