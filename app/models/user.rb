@@ -25,7 +25,10 @@ class User < ApplicationRecord
     foreign_key: :seller_id,
     class_name: :Product
   
-  has_many :cartitems
+  has_many :cartitems,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :CartItem
     
   has_many :reviews,
     primary_key: :id,
