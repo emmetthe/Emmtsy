@@ -3,15 +3,30 @@ import React from 'react';
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      quantity: 1
+    };
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
+      // testing fetch cart
+    if(this.props.currentUser) {
+      this.props.fetchCartItems();
+    }
+
   }
 
-  handleAddToCart() {
-    return null;
+  handleAddToCart(e) {
+    e.preventDefault();
+    const { createCart, updateCartItem, cartItem, currentUser, openModal, product} = this.props;
+    const item = {user_id: currentUser, product_id: product.id, quantity: this.state.quantity}
+    if (currentUser) {
+      cartItem[product.id] == product.id ? updateCartItem(cartItem) : createCart(item);
+    } else {
+      openModal('Sign in')
+    }
   }
 
   getRandomNum(min, max) {

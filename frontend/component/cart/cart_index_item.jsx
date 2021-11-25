@@ -6,16 +6,22 @@ export default class CartIndexItem extends React.Component {
     super(props);
   }
 
+  // componentDidMount() {
+  //   this.props.fetchCartItems();
+  // }
+
   render() {
-    const {cartItem}
+    const { product_id, quantity, user_id, photoUrl, product_name, price } = this.props.cartItem;
     return (
-      <li className='cart-index-item'>
-        <Link to={`/products/${cartItem.product_id}`}>
-        {/* <img src={cartItem.product.photoUrl} className="cart-index-image" />
-        <p className="cart-index-name">{product.product_name}</p> */}
-        <p>need to test img, name, and price</p>
+      <li className="cart-index-item">
+        <Link to={`/products/${product_id}`}>
+          <img src={photoUrl} className="cart-index-image" />
+          <p>need to test img, name, and price</p>
         </Link>
+        <p className="cart-index-name">{product_name}</p>
+        <div className="cart-index-price">{price}</div>
+        <div className="cart-index-quantity">{quantity}</div>
       </li>
-    )
+    );
   }
 }

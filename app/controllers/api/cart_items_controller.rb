@@ -2,7 +2,7 @@ class Api::CartItemsController < ApplicationController
   before_action :require_logged_in, only: [:index, :show, :create, :update, :destroy]
 
   def index
-    @cart_items = current_user.cartitems        
+    @cart_items = CartItem.all.select{|item| item.user_id == current_user.id }     
     render :index
   end
 
@@ -13,8 +13,9 @@ class Api::CartItemsController < ApplicationController
 
   def update 
     @cart_item = CartItem.find(params[:id])
-    if @cart_item.update(cart_item_params)
-      render :show
+    if @cart_item.update!(cart_item_params)
+      @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
+      render :index
     else
       render json: @cart_item.errors.full_messages, status: 404 
     end
@@ -23,7 +24,8 @@ class Api::CartItemsController < ApplicationController
   def create
     @cart_item = CartItem.create!(cart_item_params)
     if @cart_item.save!
-      render :show
+      @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
+      render :index
     else
       render json: @cart_item.errors.full_messages, status: 422
     end
@@ -32,7 +34,8 @@ class Api::CartItemsController < ApplicationController
   def destroy 
     @cart_item = CartItem.find(params[:id])
     if @cart_item && @cart_item.destroy 
-      render :show
+      @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
+      render :index
     else
       render json: @cart_item.errors.full_messages, status: 404 
     end
