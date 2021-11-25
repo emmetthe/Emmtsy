@@ -92,7 +92,7 @@ product1 = Product.create!(
   category_id: category4.id
 )
 
-# product1.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/charcuterie.jpg'), filename: 'charcuterie.jpg')
+product1.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/charcuterie.jpg'), filename: 'charcuterie.jpg')
 
 product2 = Product.create!(
   seller_id: user3.id,
@@ -152,5 +152,5 @@ product7 = Product.create!(
   category_id: category9.id
 )
 
-# photo2 = URI.open("https://emmtsy-seeds.s3.us-west-1.amazonaws.com/pizzacard.jpg")
-# product7.photo.attach(io: photo2, filename:"pizzacard.jpg")
+photo2 = URI.open("https://emmtsy-seeds.s3.us-west-1.amazonaws.com/pizzacard.jpg")
+product7.photo.attach(io: photo2, filename:"pizzacard.jpg")
