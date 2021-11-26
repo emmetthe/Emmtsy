@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {quantity: this.props.cartItem.quantity}
+    this.handleRemoveItem = this.handleRemoveItem.bind(this)
   }
 
-  // componentDidMount() {
-  //   this.props.fetchCartItems();
-  // }
+  handleRemoveItem(e) {
+    e.preventDefault();
+    this.props.deleteCartItem(this.props.cartItem.id);
+  }
 
   render() {
     const { product_id, quantity, user_id, photoUrl, product_name, price } = this.props.cartItem;
@@ -16,11 +19,11 @@ class CartIndexItem extends React.Component {
       <li className="cart-index-item">
         <Link to={`/products/${product_id}`}>
           <img src={photoUrl} className="cart-index-image" />
-          <p>need to test img, name, and price</p>
         </Link>
         <p className="cart-index-name">{product_name}</p>
         <div className="cart-index-price">${price}</div>
         <div className="cart-index-quantity">quantity: {quantity}</div>
+        <button onClick={this.handleRemoveItem}>Remove</button>
       </li>
     );
   }

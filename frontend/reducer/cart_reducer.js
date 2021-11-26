@@ -6,7 +6,7 @@ const cartReducer = (state = {}, action) => {
     case FETCH_ALL_CART_ITEMS:
       return action.cartItems;
     case CREATE_CART_ITEM:
-      return Object.assign({}, state, { [action.cartItem.id]: action.cartItem })
+      return Object.assign({}, state, { [action.cartItem.id]: action.cartItem });
     case DELETE_CART_ITEM:
       let nextState = Object.assign({}, state);
       delete nextState[action.cartItemId];

@@ -24,7 +24,7 @@ class CartIndex extends React.Component {
 
     const cartItems = cart.map((cartItem) => (
       <CartIndexItem
-        key={cart.id}
+        key={cartItem.id}
         cartItem={cartItem}
         createCart={createCart}
         deleteCartItem={deleteCartItem}

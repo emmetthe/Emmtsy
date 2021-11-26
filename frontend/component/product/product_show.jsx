@@ -11,21 +11,26 @@ class ProductShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
-      // testing fetch cart
-    if(this.props.currentUser) {
+    // testing fetch cart
+    if (this.props.currentUser) {
       this.props.fetchCartItems();
     }
+  }
 
+  update(type) {
+    return (e) => {
+      this.setState({ [type]: e.currentTarget.value });
+    };
   }
 
   handleAddToCart(e) {
     e.preventDefault();
-    const { createCart, updateCartItem, cartItem, currentUser, openModal, product} = this.props;
-    const item = {user_id: currentUser, product_id: product.id, quantity: 1}
+    const { createCart, updateCartItem, cartItem, currentUser, openModal, product } = this.props;
+    const item = { user_id: currentUser, product_id: product.id, quantity: this.state };
     if (currentUser) {
-      cartItem[product.id] == product.id ? updateCartItem(cartItem) : createCart(item);
+      cartItem[product.id] == product.id ? updateCartItem(cartItem) : createCart(cartItem);
     } else {
-      openModal('Sign in')
+      openModal('Sign in');
     }
   }
 
