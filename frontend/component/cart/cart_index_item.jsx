@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class CartIndexItem extends React.Component {
+class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -19,9 +19,11 @@ export default class CartIndexItem extends React.Component {
           <p>need to test img, name, and price</p>
         </Link>
         <p className="cart-index-name">{product_name}</p>
-        <div className="cart-index-price">{price}</div>
-        <div className="cart-index-quantity">{quantity}</div>
+        <div className="cart-index-price">${price}</div>
+        <div className="cart-index-quantity">quantity: {quantity}</div>
       </li>
     );
   }
 }
+
+export default CartIndexItem;

@@ -21,7 +21,7 @@ class ProductShow extends React.Component {
   handleAddToCart(e) {
     e.preventDefault();
     const { createCart, updateCartItem, cartItem, currentUser, openModal, product} = this.props;
-    const item = {user_id: currentUser, product_id: product.id, quantity: this.state.quantity}
+    const item = {user_id: currentUser, product_id: product.id, quantity: 1}
     if (currentUser) {
       cartItem[product.id] == product.id ? updateCartItem(cartItem) : createCart(item);
     } else {

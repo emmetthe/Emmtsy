@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import { fetchCartItems, createCart, deleteCartItem, updateCartItem } from '../../action/cart_action';
 import CartIndex from './cart_index';
 
-const mSTP = (state, ownProps) => ({
+const mSTP = (state, ownProps) => {
+  return {
   cart: Object.values(state.entities.cart),
   user: state.session.id,
-});
+  }
+};
 
 const mDTP = (dispatch) => ({
   fetchCartItems: () => dispatch(fetchCartItems()),

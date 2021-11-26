@@ -11,22 +11,28 @@ class CartIndex extends React.Component {
   }
 
   render() {
-    const { cart, createCart, deleteCartItem, updateCartItem, fetchCartItems } = this.props.cart;
+    const { cart, createCart, deleteCartItem, updateCartItem, fetchCartItems } = this.props;
     if (!cart) return null;
 
-    const cartItems = cart.map((cartItem) => {
+    if (cart.length == 0) {
       return (
-        <CartIndexItem
+        <div className="empty-cart-containter">
+          <h1 className="empty-cart">Your cart is empty.</h1>
+        </div>
+      );
+    }
+
+    const cartItems = cart.map((cartItem) => (
+      <CartIndexItem
         key={cart.id}
         cartItem={cartItem}
         createCart={createCart}
         deleteCartItem={deleteCartItem}
         updateCartItem={updateCartItem}
         fetchCartItems={fetchCartItems}
-        />
-        );
-      });
-      
+      />
+    ));
+
     return (
       <div className="cart-index-container">
         <div className="cart-item-container">
