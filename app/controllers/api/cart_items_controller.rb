@@ -15,7 +15,7 @@ class Api::CartItemsController < ApplicationController
     @cart_item = CartItem.find(params[:id])
     if @cart_item.update!(cart_item_params)
       @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
-      render :index
+      render :show
     else
       render json: @cart_item.errors.full_messages, status: 404 
     end
@@ -25,7 +25,7 @@ class Api::CartItemsController < ApplicationController
     @cart_item = CartItem.create!(cart_item_params)
     if @cart_item.save!
       @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
-      render :index
+      render :show
     else
       render json: @cart_item.errors.full_messages, status: 422
     end

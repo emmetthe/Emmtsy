@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
-    <div>
+    <div className="header-buttons">
       <button className="header-button" onClick={() => openModal('Sign in')}>
         Sign in
       </button>
-      <Link to="/cart">go to cart</Link>
+      <div className="header-cart-link">
+        <Link to="/cart">go to cart</Link>
+      </div>
     </div>
   );
   const personalGreeting = () => (
@@ -15,7 +17,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
       <button className="header-button" onClick={logout}>
         Log Out
       </button>
-      <Link to="/cart">go to cart</Link>
+      <div className="header-cart-link">
+        <Link to="/cart">go to cart</Link>
+      </div>
     </div>
   );
 

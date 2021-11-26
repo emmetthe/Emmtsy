@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import ProductShow from './product_show';
 import { fetchProduct } from '../../action/product_actions';
-import { createCart, updateCartItem } from '../../action/cart_action';
+import { createCart, updateCartItem, fetchCartItems } from '../../action/cart_action';
 import { openModal } from '../../action/modal_action';
-import { fetchCartItems } from '../../action/cart_action';
 
 const mSTP = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.productId],
