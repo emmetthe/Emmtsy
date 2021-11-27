@@ -103,6 +103,8 @@ product2 = Product.create!(
   category_id: category2.id
 )
 
+product2.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/wallet.jpg'), filename: 'wallet.jpg')
+
 product3 = Product.create!(
   seller_id: user2.id,
   product_name: "TGR Jane V2",
@@ -121,6 +123,8 @@ product3 = Product.create!(
   category_id: category1.id
 )
 
+product3.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/tgr-jane.png'), filename: 'tgr-jane.png')
+
 product4 = Product.create!(
   seller_id: user3.id,
   product_name: "Big Letter Necklace",
@@ -128,6 +132,8 @@ product4 = Product.create!(
   price: 23.52,
   category_id: category2.id
 )
+
+product4.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/big-letter.png'), filename: 'big-letter.png')
 
 product5 = Product.create!(
   seller_id: user1.id,
@@ -137,6 +143,8 @@ product5 = Product.create!(
   category_id: category3.id
 )
 
+product5.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/cow.png'), filename: 'cow.png')
+
 product6 = Product.create!(
   seller_id: user6.id,
   product_name: "Personalized Family Figurines",
@@ -144,6 +152,8 @@ product6 = Product.create!(
   price: 123.32,
   category_id: category6.id
 )
+
+product6.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/family.jpg'), filename: 'family.jpg')
 
 product7 = Product.create!(
   seller_id: user5.id,

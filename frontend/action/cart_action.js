@@ -24,22 +24,20 @@ const addCartItem = (cartItem) => {
   };
 };
 
-const removeCartItem = (cartItemId) => ({
-  type: DELETE_CART_ITEM,
-  cartItemId
-});
+const removeCartItem = (cartItemId) => {
+  return {
+    type: DELETE_CART_ITEM,
+    cartItemId
+  };
+};
 
-export const fetchCartItems = (cartItems) => (dispatch) => 
-CartUtil.fetchCart()
-.then((cartItems) => {
-  console.log('6', cartItems)
-  dispatch(fetchCart(cartItems))})
-;
+export const fetchCartItems = (cartItems) => (dispatch) =>
+  CartUtil.fetchCart().then((cartItems) => {
+    dispatch(fetchCart(cartItems));
+  });
 
 export const createCart = (cartItem) => (dispatch) => {
-  console.log('1', cartItem);
   CartUtil.createCartItem(cartItem).then((cartItem) => {
-    console.log('2', cartItem);
     dispatch(createCartItem(cartItem));
   });
 };

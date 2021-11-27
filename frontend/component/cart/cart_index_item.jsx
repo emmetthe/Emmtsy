@@ -10,7 +10,8 @@ class CartIndexItem extends React.Component {
 
   handleRemoveItem(e) {
     e.preventDefault();
-    this.props.deleteCartItem(this.props.cartItem.id);
+    console.log('1', this.props.cartItem)
+    this.props.deleteCartItem(this.props.cartItem);
   }
 
   render() {

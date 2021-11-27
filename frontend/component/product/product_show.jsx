@@ -28,9 +28,8 @@ class ProductShow extends React.Component {
     const { createCart, updateCartItem, cartItem, currentUser, openModal, product } = this.props;
     const item = { user_id: currentUser, product_id: product.id, quantity: this.state.quantity };
     if (currentUser) {
-      // cartItem.hasOwnProperty(product.id) ? updateCartItem(cartItem) : 
-      if(product.id in cartItem) {
-        this.setState({quantity: this.state.quantity + 1})
+      if (product.id in cartItem) {
+        this.setState({ quantity: this.state.quantity + 1 });
       }
       createCart(item);
     } else {

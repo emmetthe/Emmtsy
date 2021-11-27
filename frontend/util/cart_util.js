@@ -11,15 +11,15 @@ export const createCartItem = (cartItem) =>
     data: { cartItem }
   });
 
-export const deleteCartItem = (cartItemId) =>
+export const deleteCartItem = (cartItem) =>
   $.ajax({
     method: 'DELETE',
-    url: `/api/cart_items/${cartItemId}`
+    url: `/api/cart_items/${cartItem.id}`
   });
 
 export const updateCartItem = (cartItem) =>
   $.ajax({
     method: 'PATCH',
-    url: `/api/cart_items/${cartItem.id}`,
+    url: `/api/cart_items/${cartItem.product_id}`,
     data: { cartItem }
   });

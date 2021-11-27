@@ -12,6 +12,7 @@ class CartIndex extends React.Component {
 
   render() {
     const { cart, createCart, deleteCartItem, updateCartItem, fetchCartItems } = this.props;
+    console.log('2',cart)
     if (!cart) return null;
 
     if (cart.length == 0) {
@@ -24,7 +25,7 @@ class CartIndex extends React.Component {
 
     const cartItems = cart.map((cartItem) => (
       <CartIndexItem
-        key={cartItem.id}
+        key={cartItem.product_id}
         cartItem={cartItem}
         createCart={createCart}
         deleteCartItem={deleteCartItem}
