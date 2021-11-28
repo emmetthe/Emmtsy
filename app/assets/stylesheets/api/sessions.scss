@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.session-buttons {
+  display: flex;
+}
+
 .header-button {
   left: 80%;
   cursor: pointer;
@@ -26,6 +30,12 @@
 
 .header-button:hover {
   background-color: rgba(236, 236, 236, 0.795);
+}
+
+.cart-link {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 .modal-background {
