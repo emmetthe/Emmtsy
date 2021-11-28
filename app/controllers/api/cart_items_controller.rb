@@ -37,14 +37,14 @@ class Api::CartItemsController < ApplicationController
       if temp.keys.include?(@cart_item.product_id) 
         @item = CartItem.find_by(id: temp[@cart_item.product_id])
         @item.quantity = @item.quantity + @cart_item.quantity
-        if @item.save && logged_in? 
+        if @item.save!
           @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
           render :index
         else 
             render json: @cart_item.errors.full_messages, status: 422
         end
       else 
-        if @cart_item.save && logged_in? 
+        if @cart_item.save!
           @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
           render :index
         else 
