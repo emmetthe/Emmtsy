@@ -10,12 +10,12 @@ const fetchCart = (cartItems) => ({
   cartItems
 });
 
-const createCartItem = (cartItem) => {
-  return {
-    type: ADD_CART_ITEM,
-    cartItem
-  };
-};
+// const createCartItem = (cartItem) => {
+//   return {
+//     type: ADD_CART_ITEM,
+//     cartItem
+//   };
+// };
 
 const addCartItem = (cartItem) => {
   return {
@@ -31,19 +31,20 @@ const removeCartItem = (cartItemId) => {
   };
 };
 
-export const fetchCartItems = (cartItems) => (dispatch) =>
+export const fetchCartItems = () => (dispatch) =>
   CartUtil.fetchCart().then((cartItems) => {
     dispatch(fetchCart(cartItems));
   });
 
 export const createCart = (cartItem) => (dispatch) => {
   CartUtil.createCartItem(cartItem).then((cartItem) => {
-    dispatch(createCartItem(cartItem));
+    dispatch(addCartItem(cartItem));
   });
 };
 
 export const deleteCartItem = (cartItemId) => (dispatch) =>
   CartUtil.deleteCartItem(cartItemId).then(() => dispatch(removeCartItem(cartItemId)));
 
-export const updateCartItem = (cartItem) => (dispatch) =>
-  CartUtil.updateCartItem(cartItem).then((cartItem) => dispatch(addCartItem(cartItem)));
+export const updateCartItem = (cartItem) => (dispatch) => {
+  return CartUtil.updateCartItem(cartItem).then((cartItem) => dispatch(addCartItem(cartItem)));
+};

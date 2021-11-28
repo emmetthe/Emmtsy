@@ -12,7 +12,7 @@ class Home extends React.Component {
 
   render() {
     const welcomeMsg = this.props.currentUser ? (
-      <h2 className="home-msg">Welcome Back, {this.props.currentUser.username}!</h2>
+      <h2 className="home-msg">Welcome back, {this.props.currentUser.username}!</h2>
     ) : (
       <h2 className="home-msg">Enjoy these deals all week long!</h2>
     );

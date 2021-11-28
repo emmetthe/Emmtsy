@@ -6,16 +6,16 @@ const cartReducer = (state = {}, action) => {
     case FETCH_ALL_CART_ITEMS:
       return action.cartItems;
     case ADD_CART_ITEM:
-      if (action.cartItem.product_id in state) {
-        let nextState = Object.assign({}, state);
-        nextState[action.cartItem.product_id].quantity = state[action.cartItem.product_id].quantity + 1;
-        return nextState;
-      }
-      return Object.assign({}, state, { [action.cartItem.product_id]: action.cartItem });
+      // if (action.cartItem.product_id in state) {
+      //   let nextState = Object.assign({}, state);
+      //   nextState[action.cartItem.product_id].quantity = state[action.cartItem.product_id].quantity + 1;
+      //   return nextState;
+      // }
+    return Object.assign({}, state, { [action.cartItem.id]: action.cartItem });
     case DELETE_CART_ITEM:
-      console.log('4', action.cartItemId.product_id)
+      console.log('4', action.cartItemId.product_id);
       let nextState = Object.assign({}, state);
-      delete nextState[action.cartItemId.product_id];
+      delete nextState[action.cartItemId];
       return nextState;
     default:
       return state;

@@ -28,10 +28,8 @@ class ProductShow extends React.Component {
     const { createCart, updateCartItem, cartItem, currentUser, openModal, product } = this.props;
     const item = { user_id: currentUser, product_id: product.id, quantity: this.state.quantity };
     if (currentUser) {
-      if (product.id in cartItem) {
-        this.setState({ quantity: this.state.quantity + 1 });
-      }
-      createCart(item);
+      product.id in cartItem ? updateCartItem(item) : createCart(item);
+      // createCart(item);
     } else {
       openModal('Sign in');
     }
@@ -69,6 +67,20 @@ class ProductShow extends React.Component {
             <h2 className="product-show-price">${product.price}</h2>
             <p className="product-stock">In Stock</p>
           </div>
+
+          {/* <div className="product-quantity-container">
+            <label className="product-show-quantity">Quantity</label>
+            <select className="product-quantity-box" onChange={this.update('quantity')}>
+              <option value="1" defaultValue="1">
+                1
+              </option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div> */}
+
           <div className="product-add-item">
             <button onClick={this.handleAddToCart} className="add-item-button">
               Add to Cart

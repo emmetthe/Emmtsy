@@ -8,11 +8,20 @@ class CartIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchCartItems();
+    this.props.fetchAllProducts();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cart.length !== this.props.cart.length) {
+      this.props.fetchCartItems();
+    }
   }
 
   render() {
-    const { cart, createCart, deleteCartItem, updateCartItem, fetchCartItems } = this.props;
-    console.log('2',cart)
+    const { cart, createCart, deleteCartItem, updateCartItem, fetchCartItems, user, products } = this.props;
+    let itemTotal = 0;
+    cart.forEach((item) => (itemTotal += parseFloat(item.price) * parseFloat(item.quantity)));
+
     if (!cart) return null;
 
     if (cart.length == 0) {
@@ -25,8 +34,10 @@ class CartIndex extends React.Component {
 
     const cartItems = cart.map((cartItem) => (
       <CartIndexItem
-        key={cartItem.product_id}
+        key={cartItem.id}
+        user={user}
         cartItem={cartItem}
+        products={products}
         createCart={createCart}
         deleteCartItem={deleteCartItem}
         updateCartItem={updateCartItem}
@@ -37,7 +48,8 @@ class CartIndex extends React.Component {
     return (
       <div className="cart-index-container">
         <div className="cart-item-container">
-          <ul>{cartItems}</ul>
+          <ul className="cart-items">{cartItems}</ul>
+          <div className="cart-price-total">Item(s) total {itemTotal.toFixed(2)}</div>
         </div>
       </div>
     );
