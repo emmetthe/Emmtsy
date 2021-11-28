@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Category extends React.Component {
   constructor(props) {
@@ -7,23 +6,19 @@ class Category extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllCategories();
+    this.props.fetchCategories();
   }
 
   render() {
     const { categories } = this.props;
     return (
-      <div className="category-container">
-        <div className="category-nav">
-          <ul className="category-nav-list">
-            {categories.map((category) => (
-              <Link to={`/categories/${category.id}`} key={category.id}>
-                <p className="category-element">{category.category_name}</p>
-              </Link>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul className="category-container">
+        {categories.map((category) => (
+          <p className="category-name" key={category.id}>
+            {category.category_name}
+          </p>
+        ))}
+      </ul>
     );
   }
 }

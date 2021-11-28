@@ -8,6 +8,7 @@ import ProductShowContainer from './product/product_show_container';
 import Modal from './modal/modal';
 import HomeContainer from './home/home_container';
 import CartContainer from './cart/cart_container';
+import CategoryContainer from './category/category_container';
 
 const App = () => (
   <div className="app">
@@ -15,8 +16,8 @@ const App = () => (
     <Link to="/" className="header-link">
       <h1 className="logo">Emmtsy</h1>
     </Link>
-
     <GreetingContainer />
+    <CategoryContainer />
     <Switch>
       <Route exact path="/products/:productId" component={ProductShowContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />

@@ -1,17 +1,13 @@
-import { connect } from 'react-redux';
-import Category from './category';
-import { fetchAllCategory, fetchAllCategories } from '../../actions/category_actions';
+import { connect } from "react-redux";
+import { fetchCategories } from "../../action/category_action";
+import Category from './category'
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    categories: Object.values(state.entities.categories)
-  };
-};
+const mSTP = (state) => ({
+  categories: Object.values(state.entities.categories)
+})
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchAllCategories: () => dispatch(fetchAllCategories())
-  };
-};
+const mDTP = (dispatch) => ({
+  fetchCategories: () => dispatch(fetchCategories()),
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default connect(mSTP, mDTP)(Category)
