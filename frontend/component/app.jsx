@@ -9,6 +9,7 @@ import Modal from './modal/modal';
 import HomeContainer from './home/home_container';
 import CartContainer from './cart/cart_container';
 import CategoryContainer from './category/category_container';
+import SearchContainer from './search/search_container';
 
 const App = () => (
   <div className="app">
@@ -16,6 +17,7 @@ const App = () => (
     <Link to="/" className="header-link">
       <h1 className="logo">Emmtsy</h1>
     </Link>
+    <SearchContainer />
     <GreetingContainer />
     <CategoryContainer />
     <Switch>

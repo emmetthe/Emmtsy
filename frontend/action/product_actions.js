@@ -34,3 +34,8 @@ export const fetchAllProducts = () => (dispatch) => {
     // (err) => dispatch(receiveProductErrors(err.responseJSON))
   );
 };
+
+export const fetchSearchedProducts = search => dispatch => (
+  ProductApiUtil.fetchSearchProducts(search).then(products =>
+    dispatch(receiveProducts(products)))
+);

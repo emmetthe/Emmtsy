@@ -48,10 +48,6 @@ user6 = User.create!(
   password: 'tsetsetsetset'    
 )
 
-category1 = Category.create!(
-  category_name: 'Keyboard & Accesories'
-)
-
 category2 = Category.create!(
   category_name: 'Jewelry & Accesories'
 )
@@ -120,7 +116,7 @@ product3 = Product.create!(
   - Full LED backlighting
   - Controller parts, diodes, and resistors are pre-soldered",
   price: 549.99,
-  category_id: category1.id
+  category_id: category6.id
 )
 
 product3.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/tgr-jane.png'), filename: 'tgr-jane.png')
