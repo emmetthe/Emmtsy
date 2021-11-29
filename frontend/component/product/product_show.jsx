@@ -69,7 +69,7 @@ class ProductShow extends React.Component {
           </div>
 
           <div className="product-quantity-container">
-            <label className="product-show-quantity">Quantity</label>
+            <label className="product-show-quantity">Quantity </label>
             <select className="product-quantity-box" onChange={this.update('quantity')}>
               <option value="1" defaultValue="1">
                 1
