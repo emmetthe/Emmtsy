@@ -42,27 +42,4 @@ class SearchIndex extends React.Component {
   }
 }
 
-//   render() {
-//     const { products } = this.props;
-
-//     let filteredProduct = products.map((product) => {
-//       return <SearchIndexItem key={product.id} product={product} />;
-//     });
-
-//     let matches;
-//     if (products.length === 0) {
-//       matches = <p className="search-results no-search">No Matches Found</p>;
-//     } else {
-//       matches = <p className="search-results">{products.length} search result(s)</p>;
-//     }
-
-//     return (
-//       <div className="search-container">
-//         {matches}
-//         <div className="all-searched-products">{filteredProduct}</div>
-//       </div>
-//     );
-//   }
-// }
-
 export default SearchIndex;
