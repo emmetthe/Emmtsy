@@ -17,11 +17,11 @@ const App = () => (
     <Link to="/" className="header-link">
       <h1 className="logo">Emmtsy</h1>
     </Link>
-    <SearchContainer />
     <GreetingContainer />
     <CategoryContainer />
     <Switch>
       <Route exact path="/products/:productId" component={ProductShowContainer} />
+      <Route exact path="/search" component={SearchContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
