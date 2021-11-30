@@ -13,7 +13,6 @@ const cartReducer = (state = {}, action) => {
       // }
     return Object.assign({}, state, { [action.cartItem.id]: action.cartItem });
     case DELETE_CART_ITEM:
-      console.log('4', action.cartItemId.product_id);
       let nextState = Object.assign({}, state);
       delete nextState[action.cartItemId];
       return nextState;
