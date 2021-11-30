@@ -19,23 +19,27 @@ class SearchBar extends React.Component {
   handleSearch(e) {
     e.preventDefault();
     const search = this.state.search;
-    this.props.fetchSearchedProducts(search).then(() => this.props.history.push(`/search?search=${search}`));
+    this.props.fetchSearchedProducts(search).then(
+      () => this.props.history.push(`/search?search=${search}`));
+    this.setState({ search: '' });
   }
 
   render() {
     return (
-      <form className="search-container" onSubmit={this.handleSearch}>
-        <input
-          type="text"
-          className="search-bar"
-          value={this.state.search}
-          placeholder={'Search for anything'}
-          onChange={this.update('search')}
-        />
-        <button type="submit" className="search-button" onClick={this.handleSearch}>
-          <img src={window.search} className="search-img" />
-        </button>
-      </form>
+      <div className="search-container">
+        <form className="search-form-container" onSubmit={this.handleSearch}>
+          <input
+            type="text"
+            className="search-bar"
+            value={this.state.search}
+            placeholder={'Search for anything'}
+            onChange={this.update('search')}
+          />
+          <button type="submit" className="search-button" onClick={this.handleSearch}>
+            <img src={window.search} className="search-img" />
+          </button>
+        </form>
+      </div>
     );
   }
 }

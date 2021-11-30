@@ -1,8 +1,12 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @products = Product.all 
-    render :index
+    if params[:search]
+      @products = Product.all.select {|product| product.product_name.downcase.include?(params[:search].downcase)}
+    else 
+      @products = Product.all 
+      render :index
+    end
   end
 
   def show 

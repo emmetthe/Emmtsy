@@ -14,9 +14,6 @@ import SearchContainer from './search/search_container';
 const App = () => (
   <div className="app">
     <Modal />
-    <Link to="/" className="header-link">
-      <h1 className="logo">Emmtsy</h1>
-    </Link>
     <GreetingContainer />
     <CategoryContainer />
     <Switch>
