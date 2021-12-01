@@ -1,4 +1,6 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_logged_in, only: [:update, :destroy, :create]
+
   def index
     @product = Product.find(params[:product_id])
     @reviews = @product.reviews
@@ -13,6 +15,7 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save!
+      @reviews = Review.where(product_id: @review.product_id)
       render :show
     else
       render json: @review.errors.full_messages, status: 401

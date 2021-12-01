@@ -11,6 +11,7 @@ User.destroy_all
 Product.destroy_all
 Category.destroy_all
 CartItem.destroy_all
+Review.destroy_all
 
 user1 = User.create!(
   username: 'demo',

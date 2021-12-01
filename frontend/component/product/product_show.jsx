@@ -1,20 +1,34 @@
 import React from 'react';
+import ReviewContainer from '../review/review_container';
+import ReviewFormContainer from '../review/review_form_container';
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 1
+      quantity: 1,
+      description: '',
+      rating: 1,
+      showForm: false
     };
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleForm = this.handleForm.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchReviews(this.props.match.params.productId);
     // testing fetch cart
     if (this.props.currentUser) {
       this.props.fetchCartItems();
     }
+  }
+
+  handleForm() {
+    this.setState({
+      showForm: !this.state.showForm
+    });
   }
 
   update(type) {
@@ -29,10 +43,19 @@ class ProductShow extends React.Component {
     const item = { user_id: currentUser, product_id: product.id, quantity: this.state.quantity };
     if (currentUser) {
       product.id in cartItem ? updateCartItem(item) : createCart(item);
-      // createCart(item);
     } else {
       openModal('Sign in');
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createReview({
+      reviewer_id: this.props.currentUser,
+      product_id: this.props.product.id,
+      rating: this.state.rating,
+      description: this.state.description
+    });
   }
 
   getRandomNum(min, max) {
@@ -42,18 +65,38 @@ class ProductShow extends React.Component {
   render() {
     let randomNum = this.getRandomNum(1, 100);
     let randomSale = this.getRandomNum(1, 5000);
-    const { product } = this.props;
+    const { product, reviews, currentUser } = this.props;
 
     if (!product) return null;
     if (typeof product.seller == 'undefined') return null;
+    // if (reviews.length === 0) return null;
+
+    let reviewForm;
+    if (currentUser && currentUser != product.seller_id) {
+      reviewForm = (
+        <div className="review-form">
+          <div>
+            {this.props.currentUser ? (
+              <form onClick={() => this.handleForm()}>
+                {this.state.showForm ? <button className="close-form">Cancel</button> : <button className="create-form">Create Review</button>}
+              </form>
+            ) : null}
+          </div>
+          {/* <button onClick={this.handleForm}>Create Review</button> */}
+          {this.state.showForm ? <ReviewFormContainer currentUser={currentUser} /> : null}
+        </div>
+      );
+    }
 
     return (
       <div className="product-show-page">
         <div className="product-info-left">
           <img src={product.photoUrl} className="product-show-image" />
           <div className="review-container">
-            <div className="review-header">Reviews for this item (not available yet)</div>
-            <div className="review-list">Reviews go here</div>
+            <div className="review-header">Reviews for this item ({reviews.length})</div>
+            {/* <button type="submit">Create Review</button> */}
+            {reviewForm}
+            <ReviewContainer product={product} />
           </div>
         </div>
         <div className="product-info-right">
