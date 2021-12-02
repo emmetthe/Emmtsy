@@ -1,15 +1,21 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_logged_in, only: [:update, :destroy, :create]
+
   def index
-    @reviews = Review.all
+    @product = Product.find(params[:product_id])
+    @reviews = @product.reviews
+    render :index
   end
 
   def show
     @review = Review.find(params[:id])
+    render :show
   end
 
   def create
     @review = Review.new(review_params)
-    if @review.save
+    if @review.save!
+      @reviews = Review.where(product_id: @review.product_id)
       render :show
     else
       render json: @review.errors.full_messages, status: 401
@@ -17,23 +23,21 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find_by(id: params[:id])
-
-    if @review && @review.update(review_params)
-      render :show
-    else
-      render json: @review.errors.full_messages, status: 401
+    @review = Review.find(params[:id])
+    if @review.update!(review_params)
+      render :show 
+    else 
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
 
   def destroy
-    @review = Review.find_by(id: params[:id])
-    if @review
-      @review.destroy
-      render :show
+    @review = Review.find(params[:id])
+    if @review && @review.destroy 
+      render :show 
     else
-      render ['Review does not exist']
+      render json: @review.errors.full_messages, status: 422
     end
   end
 

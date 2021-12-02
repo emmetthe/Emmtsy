@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import cartReducer from "./cart_reducer";
 import categoryReducer from "./category_reducer";
 import productReducer from "./product_reducer";
+import reviewReducer from "./review_reducer";
 import usersReducer from './users_reducer';
 
 const entitiesReducer = combineReducers({
@@ -9,6 +10,7 @@ const entitiesReducer = combineReducers({
   products: productReducer,
   cart: cartReducer,
   categories: categoryReducer,
+  reviews: reviewReducer
 });
 
 export default entitiesReducer;

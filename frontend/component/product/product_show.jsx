@@ -1,20 +1,35 @@
 import React from 'react';
+import ReviewContainer from '../review/review_container';
+import ReviewFormContainer from '../review/review_form_container';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 1
+      quantity: 1,
+      description: '',
+      rating: 1,
+      showForm: false
     };
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleForm = this.handleForm.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchReviews(this.props.match.params.productId);
     // testing fetch cart
     if (this.props.currentUser) {
       this.props.fetchCartItems();
     }
+  }
+
+  handleForm() {
+    this.setState({
+      showForm: !this.state.showForm
+    });
   }
 
   update(type) {
@@ -29,10 +44,19 @@ class ProductShow extends React.Component {
     const item = { user_id: currentUser, product_id: product.id, quantity: this.state.quantity };
     if (currentUser) {
       product.id in cartItem ? updateCartItem(item) : createCart(item);
-      // createCart(item);
     } else {
       openModal('Sign in');
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createReview({
+      reviewer_id: this.props.currentUser,
+      product_id: this.props.product.id,
+      rating: this.state.rating,
+      description: this.state.description
+    });
   }
 
   getRandomNum(min, max) {
@@ -42,22 +66,45 @@ class ProductShow extends React.Component {
   render() {
     let randomNum = this.getRandomNum(1, 100);
     let randomSale = this.getRandomNum(1, 5000);
-    const { product } = this.props;
+    const { product, reviews, currentUser } = this.props;
 
     if (!product) return null;
     if (typeof product.seller == 'undefined') return null;
+
+    let ratings = [];
+    reviews.map((review) => ratings.push(review.rating));
+    let total = ratings.reduce((a, b) => a + b, 0);
+    let average = Math.round(total / ratings.length);
+
+    let reviewForm;
+    if (currentUser && currentUser != product.seller_id) {
+      reviewForm = <ReviewFormContainer currentUser={currentUser} />;
+    }
 
     return (
       <div className="product-show-page">
         <div className="product-info-left">
           <img src={product.photoUrl} className="product-show-image" />
           <div className="review-container">
-            <div className="review-header">Reviews for this item (not available yet)</div>
-            <div className="review-list">Reviews go here</div>
+            <div className="review-header">Reviews for this item ({reviews.length})</div>
+
+            {reviewForm}
+            <ReviewContainer product={product} />
           </div>
         </div>
         <div className="product-info-right">
           <h2 className="product-show-name">{product.product_name}</h2>
+          <span className="product-show-stars">
+            <StarRatingComponent
+              name="average-rating"
+              editing={false}
+              starCount={5}
+              value={parseFloat(average)}
+              starColor={'#222323'}
+              emptyStarColor={'#DDDCDC'}
+              starSpacing="15px"
+            />
+          </span>
           <p className="sales">{randomSale} sales</p>
           <div className="product-show-description">
             <h4 className="product-description">Description</h4>
