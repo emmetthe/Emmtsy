@@ -46,11 +46,13 @@ class ReviewShow extends React.Component {
         <button className="update-review" onClick={() => this.props.updateReview(this.state).then(this.handleForm())}>
           Update
         </button>
-        <button className="exit-update" onClick={() => this.handleForm()}>Cancel</button>
+        <button className="exit-update" onClick={() => this.handleForm()}>
+          Cancel
+        </button>
       </div>
     ) : (
-      <button onClick={() => this.handleForm()} className="update-review">
-        Update
+      <button onClick={() => this.handleForm()} className="edit-review">
+        Edit
       </button>
     );
 
@@ -65,11 +67,13 @@ class ReviewShow extends React.Component {
     } else {
       return (
         <div className="review-show-container">
-          <div className="review-show-item">
-            <div className="review-show-user">{review.username}</div>
-            <div className="review-show-rating">Rating: {review.rating}</div>
-            <div className="review-show-description">{review.description}</div>
-          </div>
+          {!this.state.showEditForm ? (
+            <div className="review-show-item">
+              <div className="review-show-user">{review.username}</div>
+              <div className="review-show-rating">Rating: {review.rating}</div>
+              <div className="review-show-description">{review.description}</div>
+            </div>
+          ) : null}
           <button className="delete-review" onClick={() => this.props.deleteReview(review.id)}>
             Delete
           </button>
