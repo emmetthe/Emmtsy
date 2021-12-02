@@ -70,7 +70,7 @@ class ProductShow extends React.Component {
 
     if (!product) return null;
     if (typeof product.seller == 'undefined') return null;
-    
+
     let ratings = [];
     reviews.map((review) => ratings.push(review.rating));
     let total = ratings.reduce((a, b) => a + b, 0);
@@ -87,23 +87,24 @@ class ProductShow extends React.Component {
           <img src={product.photoUrl} className="product-show-image" />
           <div className="review-container">
             <div className="review-header">Reviews for this item ({reviews.length})</div>
-            <span>
-              <StarRatingComponent
-                name="average-rating"
-                editing={false}
-                starCount={5}
-                value={parseFloat(average)}
-                starColor={'#222323'}
-                emptyStarColor={'#DDDCDC'}
-                starSpacing="15px"
-              />
-            </span>
+
             {reviewForm}
             <ReviewContainer product={product} />
           </div>
         </div>
         <div className="product-info-right">
           <h2 className="product-show-name">{product.product_name}</h2>
+          <span className="product-show-stars">
+            <StarRatingComponent
+              name="average-rating"
+              editing={false}
+              starCount={5}
+              value={parseFloat(average)}
+              starColor={'#222323'}
+              emptyStarColor={'#DDDCDC'}
+              starSpacing="15px"
+            />
+          </span>
           <p className="sales">{randomSale} sales</p>
           <div className="product-show-description">
             <h4 className="product-description">Description</h4>

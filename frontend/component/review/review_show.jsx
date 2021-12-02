@@ -38,8 +38,8 @@ class ReviewShow extends React.Component {
   }
 
   render() {
-    const { review, currentUser} = this.props;
-    const {rating} = this.state
+    const { review, currentUser } = this.props;
+    const { rating } = this.state;
 
     const editReviewForm = this.state.showEditForm ? (
       <div className="review-edit-container">
@@ -75,7 +75,7 @@ class ReviewShow extends React.Component {
     if (currentUser != review.reviewer_id) {
       return (
         <div className="review-show-item">
-          <div className="review-show-user">{review.username}</div>
+          <div className="review-show-user">{review.username} {review.date}</div>
           <div className="review-show-rating">
             Rating:
             <div>
@@ -97,7 +97,7 @@ class ReviewShow extends React.Component {
         <div className="review-show-container">
           {!this.state.showEditForm ? (
             <div className="review-show-item">
-              <div className="review-show-user">{review.username}</div>
+              <div className="review-show-user">{review.username} {review.date}</div>
               <div className="review-show-rating">
                 Rating:
                 <div>
