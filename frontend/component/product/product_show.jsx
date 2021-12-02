@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewContainer from '../review/review_container';
 import ReviewFormContainer from '../review/review_form_container';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -69,7 +70,11 @@ class ProductShow extends React.Component {
 
     if (!product) return null;
     if (typeof product.seller == 'undefined') return null;
-    // if (reviews.length === 0) return null;
+    
+    let ratings = [];
+    reviews.map((review) => ratings.push(review.rating));
+    let total = ratings.reduce((a, b) => a + b, 0);
+    let average = Math.round(total / ratings.length);
 
     let reviewForm;
     if (currentUser && currentUser != product.seller_id) {
@@ -82,6 +87,17 @@ class ProductShow extends React.Component {
           <img src={product.photoUrl} className="product-show-image" />
           <div className="review-container">
             <div className="review-header">Reviews for this item ({reviews.length})</div>
+            <span>
+              <StarRatingComponent
+                name="average-rating"
+                editing={false}
+                starCount={5}
+                value={parseFloat(average)}
+                starColor={'#222323'}
+                emptyStarColor={'#DDDCDC'}
+                starSpacing="15px"
+              />
+            </span>
             {reviewForm}
             <ReviewContainer product={product} />
           </div>

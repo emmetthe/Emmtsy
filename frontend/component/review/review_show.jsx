@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ReviewShow extends React.Component {
   constructor(props) {
@@ -32,15 +33,30 @@ class ReviewShow extends React.Component {
     };
   }
 
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({ rating: nextValue });
+  }
+
   render() {
-    const { review, currentUser } = this.props;
+    const { review, currentUser} = this.props;
+    const {rating} = this.state
 
     const editReviewForm = this.state.showEditForm ? (
       <div className="review-edit-container">
         <h2 className="review-edit-header">Update Your Review</h2>
         <div className="review-rating-container">
-          <p className="rating-label">Rating: </p>
-          <p className="rating-stars">{this.state.rating} Stars</p>
+          <p className="rating-label">Rating:</p>
+          <div>
+            <StarRatingComponent
+              name="add-rating"
+              starCount={5}
+              value={rating}
+              onStarClick={this.onStarClick.bind(this)}
+              className="add-star-rating"
+              starColor={'#222323'}
+              emptyStarColor={'#DDDCDC'}
+            />
+          </div>
         </div>
         <textarea className="review-update-text" value={this.state.description} onChange={this.update('description')}></textarea>
         <button className="update-review" onClick={() => this.props.updateReview(this.state).then(this.handleForm())}>
@@ -60,7 +76,19 @@ class ReviewShow extends React.Component {
       return (
         <div className="review-show-item">
           <div className="review-show-user">{review.username}</div>
-          <div className="review-show-rating">Rating: {review.rating}</div>
+          <div className="review-show-rating">
+            Rating:
+            <div>
+              <StarRatingComponent
+                name="rating"
+                editing={false}
+                starCount={5}
+                value={parseFloat(rating)}
+                starColor={'#222323'}
+                emptyStarColor={'#DDDCDC'}
+              />
+            </div>
+          </div>
           <div className="review-show-description">{review.description}</div>
         </div>
       );
@@ -70,7 +98,19 @@ class ReviewShow extends React.Component {
           {!this.state.showEditForm ? (
             <div className="review-show-item">
               <div className="review-show-user">{review.username}</div>
-              <div className="review-show-rating">Rating: {review.rating}</div>
+              <div className="review-show-rating">
+                Rating:
+                <div>
+                  <StarRatingComponent
+                    name="rating"
+                    editing={false}
+                    starCount={5}
+                    value={parseFloat(rating)}
+                    starColor={'#222323'}
+                    emptyStarColor={'#DDDCDC'}
+                  />
+                </div>
+              </div>
               <div className="review-show-description">{review.description}</div>
             </div>
           ) : null}
