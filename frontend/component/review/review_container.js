@@ -5,7 +5,7 @@ import ReviewIndex from './review_index';
 const mSTP = (state) => {
   return {
     reviews: Object.values(state.entities.reviews),
-    currentUser: state.entities.users
+    currentUser: state.session.id
   };
 };
 

@@ -6,9 +6,17 @@ class ReviewForm extends React.Component {
     super(props);
     this.state = {
       rating: 1,
-      description: ''
+      description: '',
+      hideForm: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleForm = this.handleForm.bind(this);
+  }
+
+  handleForm() {
+    this.setState({
+      hideForm: !this.state.hideForm
+    });
   }
 
   handleSubmit(e) {
@@ -18,7 +26,7 @@ class ReviewForm extends React.Component {
       product_id: productId,
       reviewer_id: this.props.currentUser
     });
-    this.props.createReview(review);
+    this.props.createReview(review).then(this.handleForm());
   }
 
   update(field) {
@@ -26,23 +34,26 @@ class ReviewForm extends React.Component {
   }
   render() {
     const { rating } = this.state;
+
     return (
       <div className="review-form-container">
-        <form onSubmit={this.handleSubmit} className="review-form">
-          <div className="form-rating">
-            <label>Rating (stars)</label>
-          </div>
-
-          <div className="form-description">
-            <label>Description:</label>
-            <div>
-              <textarea value={this.state.description} onChange={this.update('description')} />
+        {!this.state.hideForm ? (
+          <form onSubmit={this.handleSubmit} className="review-form">
+            <div className="form-rating">
+              <label>Rating (stars)</label>
             </div>
-          </div>
-          <div className="form-buttons-container">
-            <button type="submit">Add review</button>
-          </div>
-        </form>
+
+            <div className="form-description">
+              <label>Description:</label>
+              <div>
+                <textarea value={this.state.description} onChange={this.update('description')} />
+              </div>
+            </div>
+            <div className="form-buttons-container">
+              <button type="submit">Add review</button>
+            </div>
+          </form>
+        ) : null}
       </div>
     );
   }
