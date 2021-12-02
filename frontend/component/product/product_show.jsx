@@ -73,19 +73,7 @@ class ProductShow extends React.Component {
 
     let reviewForm;
     if (currentUser && currentUser != product.seller_id) {
-      reviewForm = (
-        <div className="review-form">
-          <div>
-            {this.props.currentUser ? (
-              <form onClick={() => this.handleForm()}>
-                {this.state.showForm ? <button className="close-form">Cancel</button> : <button className="create-form">Create Review</button>}
-              </form>
-            ) : null}
-          </div>
-          {/* <button onClick={this.handleForm}>Create Review</button> */}
-          {this.state.showForm ? <ReviewFormContainer currentUser={currentUser} /> : null}
-        </div>
-      );
+      reviewForm = <ReviewFormContainer currentUser={currentUser} />;
     }
 
     return (
@@ -94,7 +82,6 @@ class ProductShow extends React.Component {
           <img src={product.photoUrl} className="product-show-image" />
           <div className="review-container">
             <div className="review-header">Reviews for this item ({reviews.length})</div>
-            {/* <button type="submit">Create Review</button> */}
             {reviewForm}
             <ReviewContainer product={product} />
           </div>

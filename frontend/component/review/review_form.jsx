@@ -26,7 +26,7 @@ class ReviewForm extends React.Component {
       product_id: productId,
       reviewer_id: this.props.currentUser
     });
-    this.props.createReview(review).then(this.handleForm());
+    this.props.createReview(review).then(this.handleForm()).then(this.setState({ rating: 1, description: '' }));
   }
 
   update(field) {
@@ -37,7 +37,12 @@ class ReviewForm extends React.Component {
 
     return (
       <div className="review-form-container">
-        {!this.state.hideForm ? (
+        {this.props.currentUser ? (
+          <form onClick={() => this.handleForm()}>
+            {this.state.hideForm ? <button className="close-form">Cancel</button> : <button className="create-form">Create Review</button>}
+          </form>
+        ) : null}
+        {this.state.hideForm ? (
           <form onSubmit={this.handleSubmit} className="review-form">
             <div className="form-rating">
               <label>Rating (stars)</label>
