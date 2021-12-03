@@ -36,7 +36,7 @@ class SearchBar extends React.Component {
             onChange={this.update('search')}
           />
           <button type="submit" className="search-button" onClick={this.handleSearch}>
-            <img src={window.search} className="search-img" />
+            <img src={window.search} onClick={this.handleSearch} className="search-img" />
           </button>
         </form>
       </div>

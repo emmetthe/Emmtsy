@@ -6,7 +6,6 @@ import SearchIndex from './search_index';
 const mSTP = (state, ownProps) => {
   return {
     products: Object.values(state.entities.products),
-    // searchText: ownProps.location.search.split('=')[1]
   };
 };
 const mDTP = (dispatch) => ({

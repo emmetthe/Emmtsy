@@ -16,22 +16,20 @@ class SearchIndex extends React.Component {
   render() {
     const { products } = this.props;
 
-    let filteredProducts = products.map((product) => (
-      <SearchIndexItem key={product.id} product={product} />
-    ));
+    let filteredProducts = products.map((product) => <SearchIndexItem key={product.id} product={product} />);
 
     let results;
     if (filteredProducts.length === 0) {
       results = (
         <div className="empty-result">
-          <h2 className="search-results-empty">We couldn't find any results</h2>;
+          <h2 className="search-results-empty">We couldn't find any results</h2>
           <br />
           <p className="search-results-empty">Try searching for something else instead?</p>
         </div>
       );
     } else {
       results = (
-        <div>
+        <div className="search-results-container">
           <p className="search-results">{filteredProducts.length} search result(s)</p>
           <div className="search-result-item">{filteredProducts}</div>
         </div>

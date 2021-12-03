@@ -3,15 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cart-index-image {
-  width: 200px;
-  height: 200px;
+  width: 10%;
+  height: 100%;
 }
 
-.header-cart-link {
-  display: flex;
-  right: 100%;
-  float: right;
-  padding: 10px;
+.cart-link {
+  padding: 5px;
   margin-right: 5px;
   margin-left: 5px;
+  margin-top: 10px;
 }
