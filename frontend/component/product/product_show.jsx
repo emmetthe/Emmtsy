@@ -77,7 +77,9 @@ class ProductShow extends React.Component {
     let average = Math.round(total / ratings.length);
 
     let reviewForm;
-    if (currentUser && currentUser != product.seller_id) {
+    if (currentUser 
+      // && currentUser != product.seller_id
+      ) {
       reviewForm = <ReviewFormContainer currentUser={currentUser} />;
     }
 
