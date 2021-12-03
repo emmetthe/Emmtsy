@@ -10,6 +10,7 @@ import HomeContainer from './home/home_container';
 import CartContainer from './cart/cart_container';
 import CategoryContainer from './category/category_container';
 import SearchContainer from './search/search_container';
+import Footer from './footer/footer';
 
 const App = () => (
   <div className="app">
@@ -24,6 +25,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <Route exact path="/" component={HomeContainer} />
     </Switch>
+    <Footer />
   </div>
 );
 

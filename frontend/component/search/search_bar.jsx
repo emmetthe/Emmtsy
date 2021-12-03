@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="search-container">
+      // <div className="search-container">
         <form className="search-form-container" onSubmit={this.handleSearch}>
           <input
             type="text"
@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
             <img src={window.search} onClick={this.handleSearch} className="search-img" />
           </button>
         </form>
-      </div>
+      // </div>
     );
   }
 }
