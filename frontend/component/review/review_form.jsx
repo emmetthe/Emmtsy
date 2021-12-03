@@ -38,7 +38,7 @@ class ReviewForm extends React.Component {
   }
 
   onStarClick(nextValue, prevValue, name) {
-    this.setState({rating: nextValue});
+    this.setState({ rating: nextValue });
   }
 
   render() {
@@ -71,12 +71,13 @@ class ReviewForm extends React.Component {
             <div className="form-description">
               <label>Description:</label>
               <div>
-                <textarea value={this.state.description} onChange={this.update('description')} />
+                <textarea className="form-textarea" value={this.state.description} onChange={this.update('description')} />
               </div>
             </div>
-            <div className="form-buttons-container">
-              <button type="submit">Add review</button>
-            </div>
+
+            <button className="form-add-review" type="submit">
+              Add review
+            </button>
           </form>
         ) : null}
       </div>

@@ -6,10 +6,6 @@ class Footer extends React.Component {
       <div className="footer-container">
         <div className="mailing-list-container">
           <p>Yes! Send me exclusive offers, unique gift ideas, and personalized tips for shopping and selling on Emmtsy.</p>
-
-          <div className="mailing-list-input">
-            <button className="sub-button">Subscribe</button>
-          </div>
         </div>
 
         <div className="footer-links-container">
@@ -34,16 +30,14 @@ class Footer extends React.Component {
             <div className="footer-about info">
               <h2>About</h2>
               <p>Emmtsy, Inc.</p>
-              <p>
-                <a target="_blank" href="https://www.linkedin.com/in/emmett-he-a59113218/">
-                  LinkedIn
-                </a>
-              </p>
-              <p>
-                <a href="https://github.com/emmetthe" target="_blank">
-                  Github
-                </a>
-              </p>
+
+              <a target="_blank" href="https://www.linkedin.com/in/emmett-he-a59113218/">
+                LinkedIn
+              </a>
+            <br/>
+              <a href="https://github.com/emmetthe" target="_blank">
+                Github
+              </a>
             </div>
 
             <div className="footer-help info">

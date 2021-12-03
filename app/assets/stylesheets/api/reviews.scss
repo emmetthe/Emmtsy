@@ -1,3 +1,103 @@
 // Place all the styles related to the api/reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-form-container {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 350px;
+}
+
+.review-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.create-form {
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 16px;
+  max-height: 50px;
+  max-width: 150px;
+  padding: 12px 18px;
+  position: relative;
+  color: white;
+  background-color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  width: 100%;
+  left: 30%;
+}
+
+.close-form {
+  border-radius: 24px;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  max-height: 40px;
+  max-width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-rating {
+  font-size: 1.25rem;
+}
+
+.form-description {
+  font-size: 1.25rem;
+}
+
+.form-textarea {
+  height: 100px;
+  width: 325px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 10px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.form-add-review {
+  display: block;
+  background-color: rgb(34,34,34);
+  color: white;
+  padding: 10px 5px;
+  height: 40px;
+  width: 100px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.form-add-review:hover {
+  opacity: 0.9;
+  transform: scale(1.02, 1);
+}
+
+.close-form:hover {
+  opacity: 0.9;
+  transform: scale(1.02, 1);
+}
+
+.create-form:hover {
+  opacity: 0.9;
+  transform: scale(1.02, 1);
+}
