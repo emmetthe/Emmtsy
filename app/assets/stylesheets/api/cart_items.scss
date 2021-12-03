@@ -2,8 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.cart-item-container {
+  display: flex;
+}
+
+.cart-items {
+  margin: 5px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.cart-index-item {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  margin: 5px;
+  /* align-items: center; */
+  width: 25%;
+}
 .cart-index-image {
-  width: 10%;
+  width: 100%;
   height: 100%;
 }
 
@@ -12,4 +33,8 @@
   margin-right: 5px;
   margin-left: 5px;
   margin-top: 10px;
+}
+
+.cart-price-total {
+  font-weight: bold;
 }

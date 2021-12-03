@@ -43,7 +43,7 @@ class ReviewIndex extends React.Component {
       );
     }
 
-    return <div className="review-container">{reviewList}</div>;
+    return <div className="review-index-container">{reviewList}</div>;
   }
 }
 

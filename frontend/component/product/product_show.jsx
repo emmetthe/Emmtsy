@@ -85,7 +85,7 @@ class ProductShow extends React.Component {
       <div className="product-show-page">
         <div className="product-info-left">
           <img src={product.photoUrl} className="product-show-image" />
-          <div className="review-container">
+          <div className="review-product-container">
             <div className="review-header">{reviews.length} Reviews</div>
 
             {reviewForm}

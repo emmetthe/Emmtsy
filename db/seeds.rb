@@ -120,7 +120,7 @@ product3 = Product.create!(
   category_id: category6.id
 )
 
-product3.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/tgr-jane.png'), filename: 'tgr-jane.png')
+product3.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/tgr-jane.jpg'), filename: 'tgr-jane.jpg')
 
 product4 = Product.create!(
   seller_id: user3.id,
@@ -130,7 +130,7 @@ product4 = Product.create!(
   category_id: category2.id
 )
 
-product4.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/big-letter.png'), filename: 'big-letter.png')
+product4.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/big-letter.jpg'), filename: 'big-letter.jpg')
 
 product5 = Product.create!(
   seller_id: user1.id,

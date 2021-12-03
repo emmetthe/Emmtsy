@@ -1,7 +1,6 @@
 .footer {
   display: flex;
   align-self: flex-end;
-  border: 1px solid rgb(68, 0, 255);
 }
 
 .footer-container {
@@ -99,12 +98,12 @@
 }
 
 .info > h2 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .info > p {
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: lighter;
 }
 
@@ -140,7 +139,7 @@
   font-family: Arial, Helvetica, sans-serif;
   background: #232347;
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.7px;
 }

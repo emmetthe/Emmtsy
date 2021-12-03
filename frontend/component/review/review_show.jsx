@@ -74,7 +74,7 @@ class ReviewShow extends React.Component {
 
     if (currentUser != review.reviewer_id) {
       return (
-        <div className="review-show-item">
+        <div className="review-show-container">
           <div className="review-show-user">{review.username} {review.date}</div>
           <div className="review-show-rating">
             Rating:

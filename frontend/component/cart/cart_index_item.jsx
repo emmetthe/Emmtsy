@@ -31,7 +31,7 @@ class CartIndexItem extends React.Component {
     const { product_id, quantity, user_id, photoUrl, product_name, price } = this.props.cartItem;
     let totalPrice = quantity * price;
     return (
-      <li className="cart-index-item">
+      <div className="cart-index-item">
         <Link to={`/products/${product_id}`}>
           <img src={photoUrl} className="cart-index-image" />
         </Link>
@@ -66,7 +66,7 @@ class CartIndexItem extends React.Component {
         <button className="remove-cart-item" onClick={() => this.props.deleteCartItem(this.props.cartItem.id)}>
           Remove
         </button>
-      </li>
+      </div>
     );
   }
 }
