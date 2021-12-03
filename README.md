@@ -7,9 +7,9 @@ Emmtsy is a full-stack web application based on Etsy, a website for selling/buyi
 Emmtsy was built with:
 * Ruby on Rails
 * PostgreSQL
-* React-Redux
+* ReactJs, NodeJs
+* Redux
 * AWS S3
-* JavaScript
 
 ## Features
 ### User Authentication
@@ -36,4 +36,4 @@ Emmtsy was built with:
 
 ## Future Implemenations
 * Allow users to search for items by category
-* Allow users to checkout, to clear their cart
+* Allow users to checkout, clearing their cart
