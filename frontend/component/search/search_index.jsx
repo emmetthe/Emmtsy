@@ -31,12 +31,12 @@ class SearchIndex extends React.Component {
       results = (
         <div className="search-results-container">
           <p className="search-results">{filteredProducts.length} search result(s)</p>
-          <div className="search-result-item">{filteredProducts}</div>
+          <div className="search-result-items">{filteredProducts}</div>
         </div>
       );
     }
 
-    return <div className="search-container">{results}</div>;
+    return <div className="search-container-item">{results}</div>;
   }
 }
 
