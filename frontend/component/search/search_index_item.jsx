@@ -15,7 +15,7 @@ class SearchIndexItem extends React.Component {
           <img src={product.photoUrl} className="searched-img" />
         </Link>
         <p className="search-product-name">{product.product_name}</p>
-        <p>${product.price}</p>
+        <p className="search-product-price">${product.price}</p>
       </div>
     );
   }

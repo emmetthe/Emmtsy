@@ -50,7 +50,8 @@
 .searched-img {
   width: 200px;
   height: 200px;
-  margin: 10px;
+  margin: 5px;
+  padding: 5px;
   border-radius: 7px;
 }
 
@@ -96,10 +97,16 @@
   flex-wrap: wrap;
   width: 70%;
   margin: 5px;
+  padding: 5px;
 }
 
 .searched-product {
   width: 20%;
   padding: 5px;
   margin: 5px;
+  font-size: 1rem;
+}
+
+.search-product-price {
+  font-weight: bold;
 }
