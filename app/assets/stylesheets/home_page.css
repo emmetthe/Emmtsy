@@ -34,7 +34,7 @@
   font-size: 52px;
   font-family: 'Guardian-EgypTT';
   background-color: rgb(253, 235, 210);
-  width: 100vw;
+  width: 100%;
 }
 
 .home-item {
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .home-index-item {

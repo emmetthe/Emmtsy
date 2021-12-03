@@ -5,7 +5,7 @@ class Footer extends React.Component {
     return (
       <div className="footer-container">
         <div className="mailing-list-container">
-          <p>Yes! Send me exclusive offers, unique gift ideas, and personalized tips for shopping and selling on Emmtsy.</p>
+          <p></p>
         </div>
 
         <div className="footer-links-container">
