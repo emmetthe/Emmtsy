@@ -47,9 +47,9 @@ class ReviewForm extends React.Component {
     return (
       <div className="review-form-container">
         {this.props.currentUser ? (
-          <form onClick={() => this.handleForm()}>
+          <div onClick={() => this.handleForm()}>
             {this.state.hideForm ? <button className="close-form">Cancel</button> : <button className="create-form">Create Review</button>}
-          </form>
+          </div>
         ) : null}
         {this.state.hideForm ? (
           <form onSubmit={this.handleSubmit} className="review-form">
