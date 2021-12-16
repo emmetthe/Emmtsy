@@ -20,17 +20,18 @@ class Home extends React.Component {
     return (
       <div className="home-container">
         {welcomeMsg}
+          <h2 className="home-item-text">Popular gifts right now</h2>
         <div className="home-item">
           <HomeIndex products={this.props.products.slice(0, 7)} />
         </div>
-        <div className="home-our-picks">
           <h2 className="home-our-picks-text">Our Picks for you</h2>
+        <div className="home-our-picks">
           <HomeIndex products={this.props.products.slice(0, 6)} />
         </div>
+        <h2 className="home-explore-text">
+          Explore one-of-a-kind finds for one-of-a-kind people There's no warehouse—just millions of people selling the things they love
+        </h2>
         <div className="home-explore">
-          <h2 className="home-explore-text">
-            Explore one-of-a-kind finds for one-of-a-kind people There's no warehouse—just millions of people selling the things they love
-          </h2>
           <HomeIndex products={this.props.products.slice(0, 5)} />
         </div>
       </div>
