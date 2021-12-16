@@ -37,10 +37,19 @@
   width: 100%;
 }
 
+.home-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
 .home-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 /* .home-item {
