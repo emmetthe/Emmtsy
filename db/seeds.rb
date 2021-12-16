@@ -162,3 +162,93 @@ product7 = Product.create!(
 
 photo2 = URI.open("https://emmtsy-seeds.s3.us-west-1.amazonaws.com/pizzacard.jpg")
 product7.photo.attach(io: photo2, filename:"pizzacard.jpg")
+
+product8 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Stationery Lover Surprise Box",
+  description: "This product is a surprise box, meaning you are not guaranteed to order the items which are photographed, our boxes are random, and will contain various different stationery products",
+  price: 13.99,
+  category_id: category5.id
+)
+
+product8.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/stationery.jpg'), filename: 'stationery.jpg')
+
+product9 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Genuine Columbia Emerald Gem Multi Gemstone Ring Band",
+  description: "MESMERIZING 100% NATURAL COLUMBIA GEM LADY AMERICA, EMERALD RING BAND WITH MULTI ZAMBIAN EMERALD GEMSTONES ALL OVER THE BAND AND SETTINGS.",
+  price: 79.99,
+  category_id: category5.id
+)
+
+product9.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/ring.jpg'), filename: 'ring.jpg')
+
+product10 = Product.create!(
+  seller_id: user1.id,
+  product_name: "Birthday Wishes",
+  description: "Our letter-pressed cards hearken back to botanical encyclopedia illustrations. Our cards are timeless and thoughtfully designed to both capture and express life's simplest and deepest sentiments.",
+  price: 4.99,
+  category_id: category9.id
+)
+
+product10.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/birthday.jpg'), filename: 'birthday.jpg')
+
+product11 = Product.create!(
+  seller_id: user3.id,
+  product_name: "Customized Dog Socks - Put Your Cute Dog on Custom Socks",
+  description: "Get custom socks with your very own fur babies face on them! They make the perfect gift for anyone who loves their dog! Perfect for any holiday, birthday, or anniversary! Handmade by local part time moms in Portland, Oregon every pair is made to order.",
+  price: 6.99,
+  category_id: category3.id
+)
+
+product11.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/socks.jpg'), filename: 'socks.jpg')
+
+product12 = Product.create!(
+  seller_id: user4.id,
+  product_name: "Custom Dog Portrait",
+  description: "We have the best pet artist in the business working for us! They produce the most incredible and seamless pet portraits. We strive to get your artwork to you in 2-6 business days (but a masterpiece does take time)",
+  price: 33.99,
+  category_id: category7.id
+)
+
+product12.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/dog-paint.jpg'), filename: 'dog-paint.jpg')
+
+product13 = Product.create!(
+  seller_id: user2.id,
+  product_name: "HummingBird 55in Amazing painting of a flying colorful bird",
+  description: "The hummingbird is known mainly for its tiny dimensions and for its ability to hover in mid-air. Its wings flutter at a speed of 90 times per second. Delicate pastel colors, dynamic brushstrokes in the direction of the wings.",
+  price: 557.99,
+  category_id: category7.id
+)
+
+product13.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/hummingbird.jpg'), filename: 'hummingbird.jpg')
+
+product14 = Product.create!(
+  seller_id: user1.id,
+  product_name: "Vintage Caravan Sewing Machine Cover Pattern",
+  description: 'Wadding - If it readily available in your area, you may wish to switch the three layers of wadding in the Tutorial for one layer of Soft and Stable (or similar) as it is easier to sew. If so, you will need to cut two rectangles of Soft and Stable 22″ X 15″ and one strip of Soft and Stable 44″ X 11″ an overall size of 44" X 30" should be sufficient. Two layers would give a sturdier finish.',
+  price: 5.99,
+  category_id: category8.id
+)
+
+product14.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/sewing.jpg'), filename: 'sewing.jpg')
+
+product15 = Product.create!(
+  seller_id: user4.id,
+  product_name: "DIY New York Style Bagel Kit",
+  description: "Learn how to make delicious, chewy bagels in an afternoon. No shopping for hard-to-find ingredients, no measuring, no frustration, just fun for all ages and experience levels! All the ingredients you'll need are in this kit. Check out our reviews to see why people love making our bagels :)",
+  price: 27.99,
+  category_id: category8.id
+)
+
+product15.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/bagel.jpg'), filename: 'bagel.jpg')
+
+product16 = Product.create!(
+  seller_id: user3.id,
+  product_name: "Glass Propagation Station with Wood Stand",
+  description: "BEAUTIFUL STYLE: This unique swing design puts the focus on your plants and gives unobstructed visibility to the health and growth of your plants. These fit nicely in a window sill, bathroom ledge, or in the kitchen. With the larger design, this also looks gorgeous as the centerpiece on your coffee table.",
+  price: 17.99,
+  category_id: category4.id
+)
+
+product16.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/propagation.jpg'), filename: 'propagation.jpg')

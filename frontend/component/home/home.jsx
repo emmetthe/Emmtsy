@@ -30,7 +30,7 @@ class Home extends React.Component {
           <h2 className="home-our-picks-text">Our Picks for you</h2>
         </div>
         <div className="home-our-picks">
-          <HomeIndex products={this.props.products.slice(0, 6)} />
+          <HomeIndex products={this.props.products.slice(6, 11)} />
         </div>
         <div className="home-text">
           <h2 className="home-explore-text">
@@ -38,7 +38,7 @@ class Home extends React.Component {
           </h2>
         </div>
         <div className="home-explore">
-          <HomeIndex products={this.props.products.slice(0, 5)} />
+          <HomeIndex products={this.props.products.slice(12, 16)} />
         </div>
       </div>
     );
