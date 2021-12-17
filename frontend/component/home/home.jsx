@@ -12,9 +12,13 @@ class Home extends React.Component {
 
   render() {
     const welcomeMsg = this.props.currentUser ? (
-      <h2 className="home-msg">Welcome back, {this.props.currentUser.username}!</h2>
+      <div className="home-msg-container">
+        <h2 className="home-msg">Welcome back, {this.props.currentUser.username}!</h2>
+      </div>
     ) : (
-      <h2 className="home-msg">Enjoy these deals all week long!</h2>
+      <div className="home-msg-container">
+        <h2 className="home-msg">Enjoy these deals all week long!</h2>
+      </div>
     );
 
     return (
@@ -26,10 +30,10 @@ class Home extends React.Component {
         <div className="home-item">
           <HomeIndex products={this.props.products.slice(0, 5)} />
         </div>
-        <div className="home-text">
-          <h2 className="home-our-picks-text">Our Picks for you</h2>
-        </div>
         <div className="home-our-picks">
+          <div className="our-pick-text">
+            <h2 className="home-our-picks-text">Our Picks for you</h2>
+          </div>
           <HomeIndex products={this.props.products.slice(6, 11)} />
         </div>
         <div className="home-text">

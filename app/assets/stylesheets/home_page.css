@@ -26,6 +26,12 @@
   margin: 0;
 }
 
+.home-msg-container {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(253, 235, 210);
+}
+
 .home-msg {
   display: flex;
   justify-content: center;
@@ -33,16 +39,17 @@
   line-height: 56px;
   font-size: 52px;
   font-family: 'Guardian-EgypTT';
-  background-color: rgb(253, 235, 210);
   width: 100%;
+  margin: 30px;
 }
 
 .home-text {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  width: 100%;
+  width: 75%;
   margin-top: 20px;
+  font-size: 1.2rem;
 }
 
 .home-item {
@@ -87,7 +94,7 @@
   color: inherit;
   border: 1px solid rgba(34, 34, 34, 0.15) !important;
   border-radius: 15px;
-  font-size: 13px;
+  font-size: 1rem;
   padding: 6px 9px;
   min-width: 0;
   width: 30%;
@@ -108,6 +115,18 @@
 .home-index-image:hover {
   box-shadow: 0 0 8px 2px rgba(209, 208, 208, 0.795);
 }
+
+.home-our-picks {
+  display: flex;
+  border: 1px solid rgb(222,222,222);
+  border-radius: 5px;
+  padding: 10px;
+  width: 75%;
+}
+
+/* .our-pick-text {
+
+} */
 
 .home-explore {
   display: flex;
