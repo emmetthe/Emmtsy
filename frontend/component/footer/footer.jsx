@@ -20,30 +20,30 @@ class Footer extends React.Component {
             </div>
 
             <div className="footer-sell info">
-              <h2>Sell</h2>
-              <p>Sell on Emmtsy</p>
-              <p>Teams</p>
-              <p>Forums</p>
-              <p>Affiliates</p>
+              <h2>Projects</h2>
+              <p>Quickly Healthy</p>
+              <p>Free Range</p>
             </div>
 
             <div className="footer-about info">
               <h2>About</h2>
               <p>Emmtsy, Inc.</p>
 
-              <a target="_blank" href="https://www.linkedin.com/in/emmett-he-a59113218/">
-                LinkedIn
-              </a>
-            <br/>
-              <a href="https://github.com/emmetthe" target="_blank">
-                Github
-              </a>
+              <p>Help Center</p>
+              <p>Privacy settings</p>
             </div>
 
             <div className="footer-help info">
-              <h2>Help</h2>
-              <p>Help Center</p>
-              <p>Privacy settings</p>
+              <h2>Contacts</h2>
+              <p>emmetthe26@gmail.com</p>
+
+              <a target="_blank" href="https://www.linkedin.com/in/emmett-he-a59113218/">
+                LinkedIn
+              </a>
+              <br />
+              <a href="https://github.com/emmetthe" target="_blank">
+                Github
+              </a>
 
               <div className="footer-icon-section">
                 <div className="footer-logo-container">
@@ -66,15 +66,6 @@ class Footer extends React.Component {
           </div>
           <div className="terms-policies">
             <p>2021 Emmtsy, Inc.</p>
-            <p>
-              <u>Terms of Use</u>
-            </p>
-            <p>
-              <u>Privacy</u>
-            </p>
-            <p>
-              <u>Interest-based ads</u>
-            </p>
           </div>
         </div>
       </div>
