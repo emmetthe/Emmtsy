@@ -38,11 +38,11 @@ class Home extends React.Component {
         </div>
         <div className="home-text">
           <h2 className="home-explore-text">
-            Explore one-of-a-kind finds for one-of-a-kind people There's no warehouse—just millions of people selling the things they love
+            Shop our selections
           </h2>
         </div>
         <div className="home-explore">
-          <HomeIndex products={this.props.products.slice(14, 18)} />
+          <HomeIndex products={this.props.products.slice(14, 19)} />
         </div>
       </div>
     );

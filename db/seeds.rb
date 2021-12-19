@@ -273,3 +273,48 @@ product18 = Product.create!(
 )
 
 product18.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/candle.jpg'), filename: 'candle.jpg')
+
+product19 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Pokemon Terrarium",
+  description: "Best Pokemon Gifts For The Pokemon Lover. Product Size: Diameter 10 cm",
+  price: 59.99,
+  category_id: category7.id
+)
+
+product19.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/pokemon.jpg'), filename: 'pokemon.jpg')
+
+product20 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Adorable Pig Earrings in Rose Gold",
+  description: "We start the year with an adorable NEW Release - Rose Gold Pig Stud Earrings. This little pig is two toned with a pretty rose gold face and a silver nose. He is super cute and would make a great gift for the pig lover!",
+  price: 34.99,
+  category_id: category2.id
+)
+
+product20.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/earring.jpg'), filename: 'earring.jpg')
+
+product21 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Dad Gift Board",
+  description: "• It holds your Phone, Wallet, Rings, Watch, Keys, Glasses, and Miscellaneous items all in one place.
+
+  • It keeps all everyday essentials organized and easy to locate
+  
+  • Easy to assemble just slide the back piece through the holes on the front, no glue, screws, or nails required.",
+  price: 35.99,
+  category_id: category9.id
+)
+
+product21.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/dad.jpg'), filename: 'dad.jpg')
+
+product22 = Product.create!(
+  seller_id: user6.id,
+  product_name: "Wooden Sling Hockey Board",
+  description: "This wooden sling hockey board game and Chess Set games are made with solid Pine wood, planet-friendly and very durable. The pieces are long-lasting, as well as recyclable, so you can enjoy a great family game without hurting the environment.",
+  price: 22.99,
+  category_id: category6.id
+)
+
+product22.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/hockey.jpg'), filename: 'hockey.jpg')
+

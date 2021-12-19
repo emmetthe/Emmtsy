@@ -15,7 +15,7 @@ class HomeIndexMid extends React.Component {
           <div className="home-product-top">
             <div className="home-text-mid">
               <p className='editor-pick'>Editor's Picks</p>
-              <p>Last-minute gift ideas</p>
+              <h2>Last-minute gift ideas</h2>
             </div>
             <div className="mid-img">
             {products.map((product, i) => {
