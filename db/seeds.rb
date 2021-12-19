@@ -252,3 +252,24 @@ product16 = Product.create!(
 )
 
 product16.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/propagation.jpg'), filename: 'propagation.jpg')
+
+product17 = Product.create!(
+  seller_id: user1.id,
+  product_name: "Wind Chimes Made From Glass Wine Bottles",
+  description: "Never before has the beauty of sight and sound complimented each other so perfectly. These Wine Bottle Wind Chimes are the perfect addition to any back yard or patio.
+  This wind chime is a gorgeous addition to any home or makes a perfect gift for a wine lover or anyone that enjoys being out in the garden during the spring and summer months, with so many color options you're sure to find one you or someone special will love.",
+  price: 21.99,
+  category_id: category4.id
+)
+
+product17.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/chimes.jpg'), filename: 'chimes.jpg')
+
+product18 = Product.create!(
+  seller_id: user1.id,
+  product_name: "Honey Tobacco Soy Candle",
+  description: "Rich and full body aroma of bergamot with honey tones and warming spices of cinnamon, clove and cedar. This cozy and comforting scent is just perfect for romantic nights and rainy days.",
+  price: 31.99,
+  category_id: category4.id
+)
+
+product18.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/candle.jpg'), filename: 'candle.jpg')

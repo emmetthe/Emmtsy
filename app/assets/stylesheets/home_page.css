@@ -39,7 +39,6 @@
   line-height: 56px;
   font-size: 52px;
   font-family: 'Guardian-EgypTT';
-  width: 100%;
   margin: 30px;
 }
 
@@ -59,16 +58,6 @@
   width: 100%;
 }
 
-/* .home-item {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 18px;
-  column-gap: 18px;
-  justify-items: stretch;
-  grid-auto-flow: column;
-} */
-
 .home-index {
   display: flex;
   justify-content: center;
@@ -76,17 +65,12 @@
   flex-wrap: wrap;
   width: 80%;
   margin: 20px 0px;
-  /* grid-template-columns: repeat(4, 1fr); */
 }
 
 .home-index-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin-right: 15px;
-  margin-left: 5px; */
-  /* width: 20%; */
-  /* height: 300px; */
 }
 
 .home-index-price {
@@ -108,8 +92,9 @@
 .home-index-image {
   width: 250px;
   height: 250px;
-  margin: 10px;
+  margin: 0 10px;
   border-radius: 7px;
+  box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 30%);
 }
 
 .home-index-image:hover {
@@ -118,15 +103,76 @@
 
 .home-our-picks {
   display: flex;
-  border: 1px solid rgb(222,222,222);
-  border-radius: 5px;
-  padding: 10px;
-  width: 75%;
+  width: 75vw;
 }
 
-/* .our-pick-text {
+.home-product-mid {
+  border: 1px solid lightgray;
+  box-shadow: rgb(17 17 26 / 10%) 0px 4px 16px, rgb(17 17 26 / 5%) 0px 8px 32px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-} */
+.home-mid-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.home-product-side {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 70%;
+  flex-direction: column;
+}
+
+.home-product-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  min-height: 200px;
+  align-items: center;
+}
+
+.mid-img {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  }
+
+.home-text-mid {
+  font-size: 2rem;
+  padding-left: 20px;
+}
+
+.editor-pick {
+  font-size: 1rem;
+  padding-bottom: 15px;
+}
+
+.home-product-bot {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  min-height: 200px;
+}
+
+.home-mid-main{
+  width: 30%;
+  display: flex;
+}
+
+.home-pics-main {
+  height: auto;
+  width: 100%;
+}
 
 .home-explore {
   display: flex;

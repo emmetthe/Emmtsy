@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeIndex from './home_index';
+import HomeIndexMid from './home_index_mid';
 
 class Home extends React.Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class Home extends React.Component {
         <h2 className="home-msg">Enjoy these deals all week long!</h2>
       </div>
     );
-
     return (
       <div className="home-container">
         {welcomeMsg}
@@ -31,10 +31,10 @@ class Home extends React.Component {
           <HomeIndex products={this.props.products.slice(0, 5)} />
         </div>
         <div className="home-our-picks">
-          <div className="our-pick-text">
+          {/* <div className="our-pick-text">
             <h2 className="home-our-picks-text">Our Picks for you</h2>
-          </div>
-          <HomeIndex products={this.props.products.slice(6, 11)} />
+          </div> */}
+          <HomeIndexMid products={this.props.products.slice(6, 13)} />
         </div>
         <div className="home-text">
           <h2 className="home-explore-text">
@@ -42,7 +42,7 @@ class Home extends React.Component {
           </h2>
         </div>
         <div className="home-explore">
-          <HomeIndex products={this.props.products.slice(12, 16)} />
+          <HomeIndex products={this.props.products.slice(14, 18)} />
         </div>
       </div>
     );
