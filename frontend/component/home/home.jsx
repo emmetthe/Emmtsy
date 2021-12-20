@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeIndex from './home_index';
 import HomeIndexMid from './home_index_mid';
+import HomeHeaderItem from './home_header_item'
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,10 +16,12 @@ class Home extends React.Component {
     const welcomeMsg = this.props.currentUser ? (
       <div className="home-msg-container">
         <h2 className="home-msg">Welcome back, {this.props.currentUser.username}!</h2>
+        <HomeHeaderItem products={this.props.products.slice(19, 22)}/>
       </div>
     ) : (
       <div className="home-msg-container">
         <h2 className="home-msg">Enjoy these deals all week long!</h2>
+        <HomeHeaderItem products={this.props.products.slice(19, 22)}/>
       </div>
     );
     return (
