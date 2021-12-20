@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './component/root';
 import configureStore from './store/store';
 
-import * as Cart from './action/cart_action';
+// import * as Cart from './action/cart_action';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // tests------------------
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchCartItems = Cart.fetchCartItems;
-  window.createCart = Cart.createCart;
-  window.deleteCart = Cart.deleteCartItem;
-  window.updateCart = Cart.updateCartItem;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.fetchCartItems = Cart.fetchCartItems;
+  // window.createCart = Cart.createCart;
+  // window.deleteCart = Cart.deleteCartItem;
+  // window.updateCart = Cart.updateCartItem;
   // ---------------------------
   ReactDOM.render(<Root store={store} />, root);
 });
