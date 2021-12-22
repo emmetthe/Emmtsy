@@ -2,6 +2,7 @@ import React from 'react';
 import HomeIndex from './home_index';
 import HomeIndexMid from './home_index_mid';
 import HomeHeaderItem from './home_header_item'
+import HomeIndexBot from './home_index_bot';
 
 class Home extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class Home extends React.Component {
           </h2>
         </div>
         <div className="home-explore">
-          <HomeIndex products={this.props.products.slice(14, 19)} />
+          <HomeIndexBot products={this.props.products.slice(14, 19)} />
         </div>
       </div>
     );

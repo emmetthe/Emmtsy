@@ -14,8 +14,8 @@ class Footer extends React.Component {
               <h2>Technologies</h2>
               <a href="https://reactjs.org/" target="blank">React-Redux</a>
               <a href="https://www.javascript.com/" target="blank">JavaScript</a>
-              <a href="https://aws.amazon.com/s3/" target="blank">AWS</a>
               <a href="https://rubyonrails.org/" target="blank">Ruby on Rails</a>
+              <a href="https://aws.amazon.com/s3/" target="blank">AWS</a>
             </div>
 
             <div className="footer-sell info">
