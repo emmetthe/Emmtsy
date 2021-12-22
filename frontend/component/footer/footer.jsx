@@ -12,38 +12,31 @@ class Footer extends React.Component {
           <div className="footer-info">
             <div className="footer-shop info">
               <h2>Technologies</h2>
-              <p>React-Redux</p>
-              <p>Javascript </p>
-              <p>AWS </p>
-              <p>Ruby on Rails </p>
-              <p>HTML/CSS </p>
+              <a href="https://reactjs.org/" target="blank">React-Redux</a>
+              <a href="https://www.javascript.com/" target="blank">JavaScript</a>
+              <a href="https://aws.amazon.com/s3/" target="blank">AWS</a>
+              <a href="https://rubyonrails.org/" target="blank">Ruby on Rails</a>
             </div>
 
             <div className="footer-sell info">
               <h2>Projects</h2>
-              <p>Quickly Healthy</p>
-              <p>Free Range</p>
+              <a href="https://quickly-healthy.herokuapp.com/#/" target="blank">
+                Quickly Healthy
+              </a>
+              <a href="https://emmetthe.github.io/js-project/" target="blank">Free Range</a>
             </div>
 
             <div className="footer-about info">
               <h2>About</h2>
               <p>Emmtsy, Inc.</p>
-
-              <p>Help Center</p>
-              <p>Privacy settings</p>
+              <a target="_blank" href="https://emmetthe.netlify.app/#">
+                Portfolio
+              </a>
             </div>
 
             <div className="footer-help info">
               <h2>Contacts</h2>
               <p>emmetthe26@gmail.com</p>
-
-              <a target="_blank" href="https://www.linkedin.com/in/emmett-he-a59113218/">
-                LinkedIn
-              </a>
-              <br />
-              <a href="https://github.com/emmetthe" target="_blank">
-                Github
-              </a>
 
               <div className="footer-icon-section">
                 <div className="footer-logo-container">
@@ -52,6 +45,9 @@ class Footer extends React.Component {
                   </a>
                   <a href="https://www.linkedin.com/in/emmett-he-a59113218/" target="_blank">
                     <img className="footer-logo" src={window.linkedin} />
+                  </a>
+                  <a href="https://angel.co/u/emmett-he" target="_blank">
+                    <img className="footer-logo" src={window.angel} />
                   </a>
                 </div>
               </div>
