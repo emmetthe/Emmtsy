@@ -13,7 +13,7 @@ class Api::CartItemsController < ApplicationController
 
   def update 
     @cart_item = CartItem.find_by(id: params[:id])
-    p params
+    # p params
     if @cart_item.update!(cart_item_params)
       @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
       render :index

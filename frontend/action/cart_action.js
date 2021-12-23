@@ -10,13 +10,6 @@ const fetchCart = (cartItems) => ({
   cartItems
 });
 
-// const createCartItem = (cartItem) => {
-//   return {
-//     type: ADD_CART_ITEM,
-//     cartItem
-//   };
-// };
-
 const addCartItem = (cartItem) => {
   return {
     type: ADD_CART_ITEM,

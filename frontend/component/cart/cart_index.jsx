@@ -4,6 +4,7 @@ import React from 'react';
 class CartIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleCheckout = this.handleCheckout.bind(this);
   }
 
   componentDidMount() {
@@ -15,6 +16,12 @@ class CartIndex extends React.Component {
     if (prevProps.cart.length !== this.props.cart.length) {
       this.props.fetchCartItems();
     }
+  }
+
+  handleCheckout() {
+    this.props.cart.map((item) => {
+      this.props.deleteCartItem(item.id);
+    });
   }
 
   render() {
@@ -51,6 +58,7 @@ class CartIndex extends React.Component {
           <ul className="cart-items">{cartItems}</ul>
           <div className="cart-price-total">Item(s) total {itemTotal.toFixed(2)}</div>
         </div>
+        <button onClick={this.handleCheckout}>Proceed to Checkout</button>
       </div>
     );
   }

@@ -18,9 +18,7 @@ const mDTP = (dispatch) => ({
   updateCartItem: (cartItem) => dispatch(updateCartItem(cartItem)),
   openModal: (modal) => dispatch(openModal(modal)),
   createReview: (review) => dispatch(createReview(review)),
-  fetchReviews: (productId) => dispatch(fetchReviews(productId)),
-  // testing fetch cart
-  fetchCartItems: () => dispatch(fetchCartItems())
+  fetchReviews: (productId) => dispatch(fetchReviews(productId))
 });
 
 export default connect(mSTP, mDTP)(ProductShow);

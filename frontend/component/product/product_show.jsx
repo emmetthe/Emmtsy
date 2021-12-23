@@ -20,10 +20,6 @@ class ProductShow extends React.Component {
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
     this.props.fetchReviews(this.props.match.params.productId);
-    // testing fetch cart
-    if (this.props.currentUser) {
-      this.props.fetchCartItems();
-    }
   }
 
   handleForm() {
@@ -64,8 +60,8 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    let randomNum = this.getRandomNum(1, 100);
-    let randomSale = this.getRandomNum(1, 5000);
+    let randomNum = 12;
+    let randomSale = 231;
     const { product, reviews, currentUser } = this.props;
 
     if (!product) return null;
@@ -77,9 +73,10 @@ class ProductShow extends React.Component {
     let average = Math.round(total / ratings.length);
 
     let reviewForm;
-    if (currentUser 
+    if (
+      currentUser
       // && currentUser != product.seller_id
-      ) {
+    ) {
       reviewForm = <ReviewFormContainer currentUser={currentUser} />;
     }
 
