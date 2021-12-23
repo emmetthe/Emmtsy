@@ -12,7 +12,7 @@ const cartReducer = (state = {}, action) => {
       //   nextState[action.cartItem.product_id].quantity = state[action.cartItem.product_id].quantity + 1;
       //   return nextState;
       // }
-    return Object.assign({}, state, action.cartItem );
+    return Object.assign({}, state, { [action.cartItem.id]: action.cartItem } );
     case DELETE_CART_ITEM:
       delete nextState[action.cartItemId];
       return nextState;
