@@ -41,46 +41,43 @@ class CartIndexItem extends React.Component {
             Remove
           </button>
         </div>
-        <div className='cart-quantity-container'>
-
-        <div className="cart-index-quantity">quantity: </div>
-        <select value={this.state.quantity} onChange={this.handleQuantity} className="cart-show-qty">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-        </select>
+        <div className="cart-quantity-container">
+          <div className="cart-index-quantity">Quantity: </div>
+          <select value={this.state.quantity} onChange={this.handleQuantity} className="cart-show-qty">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
         </div>
 
-        <div className="cart-item-right">
-          <div className="cart-index-price">
-            {quantity === 1 ? (
-              <div>
-                <span className="cart-item-price">${price}</span>
-              </div>
-            ) : (
-              <div className="cart-price-contain">
-                <span className="cart-item-total">${totalPrice.toFixed(2)}</span>
-                <span className="cart-item-single">(${price} each)</span>
-              </div>
-            )}
-          </div>
+        <div className="cart-index-price">
+          {quantity === 1 ? (
+            <div>
+              <span className="cart-item-total">${price}</span>
+            </div>
+          ) : (
+            <div className="cart-price-contain">
+              <span className="cart-item-total">${totalPrice.toFixed(2)}</span>
+              <span className="cart-item-single">(${price} each)</span>
+            </div>
+          )}
         </div>
       </div>
     );

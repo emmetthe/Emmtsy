@@ -58,8 +58,37 @@ class CartIndex extends React.Component {
           <ul className="cart-items">{cartItems}</ul>
         </div>
         <div className="cart-index-right">
-          <div className="cart-price-total">Item(s) total {itemTotal.toFixed(2)}</div>
-          <button onClick={this.handleCheckout}>Proceed to Checkout</button>
+          <div className="cart-index-right-contain">
+            <div className="payment-method">
+              <p>How you'll pay</p>
+              <div className="payment-select">
+                <div className="payments">
+                  <input type="radio" name="payment" className="payment-type" defaultChecked />
+                  <img className="payment-img" src={window.mastercard} />
+                  <img className="payment-img" src={window.visa} />
+                  <img className="payment-img" src={window.ae} />
+                  <img className="payment-img" src={window.discover} />
+                </div>
+
+                <div className="payments">
+                  <input type="radio" name="payment" className="payment-type" />
+                  <img className="payment-img" src={window.paypal} />
+                </div>
+
+                <div className="payments">
+                  <input type="radio" name="payment" className="payment-type" />
+                  <img className="payment-img" src={window.klarna} />
+                  <label className="klarna-info1">4 interest-free installments</label>
+                </div>
+              </div>
+            </div>
+
+            <div className="cart-price-container">
+              <div className="cart-price-text">Item(s) total</div>
+              <div className="cart-price-total">${itemTotal.toFixed(2)}</div>
+            </div>
+            <button onClick={this.handleCheckout}>Proceed to Checkout</button>
+          </div>
         </div>
       </div>
     );
