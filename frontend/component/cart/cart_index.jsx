@@ -56,9 +56,11 @@ class CartIndex extends React.Component {
       <div className="cart-index-container">
         <div className="cart-item-container">
           <ul className="cart-items">{cartItems}</ul>
-          <div className="cart-price-total">Item(s) total {itemTotal.toFixed(2)}</div>
         </div>
-        <button onClick={this.handleCheckout}>Proceed to Checkout</button>
+        <div className="cart-index-right">
+          <div className="cart-price-total">Item(s) total {itemTotal.toFixed(2)}</div>
+          <button onClick={this.handleCheckout}>Proceed to Checkout</button>
+        </div>
       </div>
     );
   }

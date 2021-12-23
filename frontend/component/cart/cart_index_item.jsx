@@ -35,21 +35,15 @@ class CartIndexItem extends React.Component {
         <Link to={`/products/${product_id}`}>
           <img src={photoUrl} className="cart-index-image" />
         </Link>
-        <p className="cart-index-name">{product_name}</p>
-        <div className="cart-index-quantity">quantity: {quantity}</div>
-        <div className="cart-index-price">
-          {quantity === 1 ? (
-            <div>
-              <span className="cart-item-price">${price}</span>
-            </div>
-          ) : (
-            <div>
-              <span className="cart-item-total">${totalPrice.toFixed(2)}</span>
-              <span className="cart-item-single">(${price} each)</span>
-            </div>
-          )}
+        <div className="cart-item-left">
+          <p className="cart-index-name">{product_name}</p>
+          <button className="remove-cart-item" onClick={() => this.props.deleteCartItem(this.props.cartItem.id)}>
+            Remove
+          </button>
         </div>
+        <div className='cart-quantity-container'>
 
+        <div className="cart-index-quantity">quantity: </div>
         <select value={this.state.quantity} onChange={this.handleQuantity} className="cart-show-qty">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -61,11 +55,33 @@ class CartIndexItem extends React.Component {
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
         </select>
+        </div>
 
-        <button className="remove-cart-item" onClick={() => this.props.deleteCartItem(this.props.cartItem.id)}>
-          Remove
-        </button>
+        <div className="cart-item-right">
+          <div className="cart-index-price">
+            {quantity === 1 ? (
+              <div>
+                <span className="cart-item-price">${price}</span>
+              </div>
+            ) : (
+              <div className="cart-price-contain">
+                <span className="cart-item-total">${totalPrice.toFixed(2)}</span>
+                <span className="cart-item-single">(${price} each)</span>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     );
   }

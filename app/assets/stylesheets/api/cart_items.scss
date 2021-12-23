@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cart-index-container {
-  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 65vw;
 }
 
 .cart-item-container {
@@ -11,8 +13,6 @@
 }
 
 .cart-items {
-  margin: 5px;
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,13 +20,39 @@
 
 .cart-index-item {
   display: flex;
-  flex-direction: column;
-  margin: 5px;
-  width: 25%;
+  width: 50%;
 }
+
+.cart-item-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-quantity-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.cart-item-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-price-contain {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.cart-item-total {
+  font-weight: bold;
+}
+
 .cart-index-image {
   width: 200px;
   height: 175px;
+  border-radius: 7px;
 }
 
 .cart-link {
@@ -34,6 +60,11 @@
   margin-right: 5px;
   margin-left: 5px;
   margin-top: 10px;
+}
+
+.cart-index-right {
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-price-total {
