@@ -18,10 +18,12 @@ class CartIndex extends React.Component {
     }
   }
 
-  handleCheckout() {
+  handleCheckout(e) {
+    e.preventDefault();
     this.props.cart.map((item) => {
       this.props.deleteCartItem(item.id);
     });
+    this.props.openModal('Checkout');
   }
 
   render() {
@@ -33,7 +35,7 @@ class CartIndex extends React.Component {
 
     if (cart.length == 0) {
       return (
-        <div className="empty-cart-containter">
+        <div className="empty-cart-container">
           <h1 className="empty-cart">Your cart is empty.</h1>
         </div>
       );
