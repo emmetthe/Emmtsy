@@ -266,13 +266,13 @@ product17.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws
 
 product18 = Product.create!(
   seller_id: user1.id,
-  product_name: "Honey Tobacco Soy Candle",
-  description: "Rich and full body aroma of bergamot with honey tones and warming spices of cinnamon, clove and cedar. This cozy and comforting scent is just perfect for romantic nights and rainy days.",
-  price: 31.99,
+  product_name: "Wool Ceramic Mug",
+  description: "This mug is for all the knit lovers out there! It's hand-shaped to give it a wool texture. It's cute, beautiful, and the perfect gift for the holidays!",
+  price: 29.99,
   category_id: category4.id
 )
 
-product18.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/candle.jpg'), filename: 'candle.jpg')
+product18.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/mugs.jpg'), filename: 'mugs.jpg')
 
 product19 = Product.create!(
   seller_id: user6.id,

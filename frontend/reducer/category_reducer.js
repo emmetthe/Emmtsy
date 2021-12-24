@@ -1,4 +1,4 @@
-import { RECEIVE_CATEGORIES } from "../action/category_action";
+import { RECEIVE_CATEGORIES, RECEIVE_CATEGORY } from '../action/category_action';
 
 const categoryReducer = (state = {}, action) => {
   Object.freeze(state);

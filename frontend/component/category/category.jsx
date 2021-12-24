@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Category extends React.Component {
   constructor(props) {
@@ -14,9 +15,9 @@ class Category extends React.Component {
     return (
       <ul className="category-container">
         {categories.map((category) => (
-          <p className="category-name" key={category.id}>
-            {category.category_name}
-          </p>
+          <Link to={`/categories/${category.id}`}>
+            <p className="category-name">{category.category_name}</p>
+          </Link>
         ))}
       </ul>
     );

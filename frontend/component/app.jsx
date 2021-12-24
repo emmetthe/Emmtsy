@@ -11,6 +11,7 @@ import CartContainer from './cart/cart_container';
 import CategoryContainer from './category/category_container';
 import SearchContainer from './search/search_container';
 import Footer from './footer/footer';
+import CategoryIndexContainer from './category/category_index_container';
 
 const App = () => (
   <div className="app">
@@ -20,6 +21,7 @@ const App = () => (
     <Switch>
       <Route exact path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/search" component={SearchContainer} />
+      <Route exact path="/categories/:id" component={CategoryIndexContainer} />
       <ProtectedRoute exact path="/cart" component={CartContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
