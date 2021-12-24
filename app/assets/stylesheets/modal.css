@@ -1,0 +1,17 @@
+.cart-modal-msg {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+.view-cart-modal {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-cart-modal:hover {
+  color: rgb(241,100,30);
+}

@@ -41,6 +41,7 @@ class ProductShow extends React.Component {
     if (currentUser) {
       // product.id in cartItem ? updateCartItem(item) : createCart(item);
       createCart(item)
+      openModal('Add to Cart')
     } else {
       openModal('Sign in');
     }

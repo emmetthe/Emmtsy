@@ -4,6 +4,7 @@ import SignUpFormContainer from '../session_form/signup_form_container';
 import LogInFormContainer from '../session_form/login_form_container';
 import { closeModal } from '../../action/modal_action';
 import CartContainer from '../cart/cart_container';
+import { Link } from 'react-router-dom';
 
 function Modal({ modal, closeModal }) {
   // if (!modal) {
@@ -28,6 +29,20 @@ function Modal({ modal, closeModal }) {
               here!
             </a>
           </h2>
+          <div onClick={closeModal} className="exit-modal">
+            &times;
+          </div>
+        </div>
+      );
+      break;
+    case 'Add to Cart':
+      component = (
+        <div>
+          <h2 className="cart-modal-msg">Item has been added to cart</h2>
+          <br />
+          <Link className="view-cart-modal" to="/cart" onClick={closeModal}>
+            View Cart
+          </Link>
           <div onClick={closeModal} className="exit-modal">
             &times;
           </div>
