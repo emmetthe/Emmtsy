@@ -93,6 +93,10 @@
   font-weight: lighter;
 }
 
+.info > a {
+  color: white;
+}
+
 .info > a:hover {
   color: rgb(215,230,245);
 }
