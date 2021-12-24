@@ -1,4 +1,5 @@
 import React from 'react';
+import CategoryIndexItem from './category_index_item'
 
 class Category extends React.Component {
   constructor(props) {
@@ -14,9 +15,7 @@ class Category extends React.Component {
     return (
       <ul className="category-container">
         {categories.map((category) => (
-          <p className="category-name" key={category.id}>
-            {category.category_name}
-          </p>
+          <CategoryIndexItem category={category} key={category.id} />
         ))}
       </ul>
     );
