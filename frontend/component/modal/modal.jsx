@@ -28,6 +28,9 @@ function Modal({ modal, closeModal }) {
               here!
             </a>
           </h2>
+          <div onClick={closeModal} className="exit-modal">
+            &times;
+          </div>
         </div>
       );
       break;

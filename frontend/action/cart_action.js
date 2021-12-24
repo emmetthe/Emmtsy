@@ -30,7 +30,9 @@ export const fetchCartItems = () => (dispatch) =>
   });
 
 export const createCart = (cartItem) => (dispatch) => {
+  // console.log('3', cartItem)
   CartUtil.createCartItem(cartItem).then((cartItem) => {
+    // console.log("2", cartItem)
     dispatch(addCartItem(cartItem));
   });
 };

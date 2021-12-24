@@ -39,8 +39,8 @@ class ProductShow extends React.Component {
     const { createCart, updateCartItem, cartItem, currentUser, openModal, product } = this.props;
     const item = { user_id: currentUser, product_id: product.id, quantity: this.state.quantity };
     if (currentUser) {
-      product.id in cartItem ? updateCartItem(item) : createCart(item);
-      // createCart(item)
+      // product.id in cartItem ? updateCartItem(item) : createCart(item);
+      createCart(item)
     } else {
       openModal('Sign in');
     }
