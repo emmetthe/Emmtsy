@@ -55,8 +55,6 @@
 .searched-img {
   width: 200px;
   height: 200px;
-  margin: 5px;
-  padding: 5px;
   border-radius: 7px;
 }
 
@@ -84,7 +82,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 5px;
+  margin: 5px;
   width: 100%;
 }
 
@@ -95,15 +93,21 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 70%;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px;
 }
 
 .searched-product {
   width: 20%;
-  padding: 5px;
   margin: 5px;
   font-size: 1rem;
+}
+
+.search-product-name {
+  margin: 10px 0;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .search-product-price {
