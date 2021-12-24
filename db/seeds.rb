@@ -49,6 +49,18 @@ user6 = User.create!(
   password: 'tsetsetsetset'    
 )
 
+user7 = User.create!(
+  username: 'abc',
+  email: 'abc@g.com',
+  password: 'aaaaaaaaaa'    
+)
+
+user8 = User.create!(
+  username: 'haha',
+  email: 'jajajaja@g.com',
+  password: '111111111111'    
+)
+
 category2 = Category.create!(
   category_name: 'Jewelry & Accesories'
 )
@@ -82,7 +94,7 @@ category9 = Category.create!(
 )
 
 product1 = Product.create!(
-  seller_id: user1.id,
+  seller_id: user7.id,
   product_name: 'Personalized Charcuterie Planks and Beer Flights',
   description:
     'Serve your guests with style and panache with a personalized Charcuterie or Beer Flight Serving Trays. Our cleverly designed Beer Flight Trays hold the wider flared part of the glass for stable carrying and serving. They are designed to hold most any size or shape of beer glass.',
@@ -143,7 +155,7 @@ product5 = Product.create!(
 product5.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/cow.png'), filename: 'cow.png')
 
 product6 = Product.create!(
-  seller_id: user6.id,
+  seller_id: user7.id,
   product_name: "Personalized Family Figurines",
   description: 'I create high quality personalized wooden dolls with nice little details from your daily life based on your photos.',
   price: 123.32,
@@ -174,7 +186,7 @@ product8 = Product.create!(
 product8.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/stationery.jpg'), filename: 'stationery.jpg')
 
 product9 = Product.create!(
-  seller_id: user6.id,
+  seller_id: user8.id,
   product_name: "Genuine Columbia Emerald Gem Multi Gemstone Ring Band",
   description: "MESMERIZING 100% NATURAL COLUMBIA GEM LADY AMERICA, EMERALD RING BAND WITH MULTI ZAMBIAN EMERALD GEMSTONES ALL OVER THE BAND AND SETTINGS.",
   price: 79.99,
@@ -265,7 +277,7 @@ product17 = Product.create!(
 product17.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/chimes.jpg'), filename: 'chimes.jpg')
 
 product18 = Product.create!(
-  seller_id: user1.id,
+  seller_id: user8.id,
   product_name: "Wool Ceramic Mug",
   description: "This mug is for all the knit lovers out there! It's hand-shaped to give it a wool texture. It's cute, beautiful, and the perfect gift for the holidays!",
   price: 29.99,
@@ -309,7 +321,7 @@ product21 = Product.create!(
 product21.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/dad.jpg'), filename: 'dad.jpg')
 
 product22 = Product.create!(
-  seller_id: user6.id,
+  seller_id: user8.id,
   product_name: "Wooden Sling Hockey Board",
   description: "This wooden sling hockey board game and Chess Set games are made with solid Pine wood, planet-friendly and very durable. The pieces are long-lasting, as well as recyclable, so you can enjoy a great family game without hurting the environment.",
   price: 22.99,
