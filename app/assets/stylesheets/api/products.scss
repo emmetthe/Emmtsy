@@ -45,8 +45,9 @@
 .product-show-page {
   width: 100%;
   height: 100%;
-  padding: 45px 0px;
+  margin: 45px 0px;
 }
+
 
 .product-info-left {
   display: flex;
@@ -56,7 +57,7 @@
   flex-direction: column;
   height: 100%;
   float: left;
-  padding: 5px;
+  margin-left: 60px;
 }
 
 .product-show-image {
@@ -82,9 +83,17 @@
   justify-content: center;
   flex-direction: column;
   float: right;
-  width: 50%;
+  width: 40%;
   height: 100%;
-  padding: 5px;
+  margin-right: 70px;
+}
+
+.product-show-name {
+  display: flex;
+  line-height: 1.3em;
+  align-items: center;
+  width: 53%;
+  justify-content: center;
 }
 
 .product-show-description {
@@ -121,6 +130,10 @@
 .product-stock {
   float: right;
   margin: 10px;
+}
+
+.product-add-item {
+  margin: 10px 0;
 }
 
 .hot-item-container {
