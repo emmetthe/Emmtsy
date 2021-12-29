@@ -7,16 +7,15 @@
 .category-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   line-height: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 5px;
+  margin: 12px 0;
+  width: 65vw;
 }
 
 .category-name {
-  padding: 5px 20px;
-  margin: 2px;
   color: black;
   font-size: 0.8rem;
 }
