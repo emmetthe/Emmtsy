@@ -115,6 +115,7 @@
   display: flex;
   width: 45%;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .footer-logo-container > a > img {

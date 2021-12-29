@@ -7,12 +7,11 @@
 .category-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
+  justify-content: space-around;
   line-height: 18px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 12px 0;
-  width: 65vw;
+  width: 70vw;
 }
 
 .category-name {
@@ -51,6 +50,7 @@
   width: 70%;
   margin-top: 20px;
   justify-content: flex-start;
+  min-height: 52vh;
 }
 
 .category-item {
