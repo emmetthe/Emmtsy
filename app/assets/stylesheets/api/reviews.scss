@@ -3,18 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .review-form-container {
-  width: 50%;
+  width: 64%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   margin: 10px;
+  display: flex;
 }
 
 .review-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 100%;
-  min-height: 350px;
+  justify-content: space-between;
+  width: 80%;
+  min-height: 250px;
+}
+
+.cancel-btn {
+  margin-left: -100px;
 }
 
 .review-header {
@@ -29,13 +34,12 @@
   max-height: 50px;
   max-width: 150px;
   padding: 12px 18px;
-  position: relative;
+  margin: 15px 0;
   color: white;
   background-color: #222222;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   width: 100%;
-  left: 30%;
 }
 
 .close-form {
@@ -64,7 +68,7 @@
 
 .form-textarea {
   height: 100px;
-  width: 325px;
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 10px;
   font-size: 15px;
@@ -124,7 +128,10 @@
   list-style: none;
 }
 
-.delete-review, .edit-review, .update-review, .exit-update {
+.delete-review,
+.edit-review,
+.update-review,
+.exit-update {
   background-color: #222222;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
@@ -137,7 +144,10 @@
   margin: 3px;
 }
 
-.delete-review:hover, .edit-review:hover, .update-review:hover, .exit-update:hover {
+.delete-review:hover,
+.edit-review:hover,
+.update-review:hover,
+.exit-update:hover {
   cursor: pointer;
   opacity: 0.9;
   transform: scale(1.03);

@@ -46,7 +46,7 @@ class HomeIndexMid extends React.Component {
           {products.map((product, i) => {
             if (i === 6) {
               return (
-                <Link to={`/products/${product.id}`} className="home-mid-link">
+                <Link to={`/products/${product.id}`} className="home-mid-link-main">
                   <img className="home-pics-main" src={product.photoUrl} />
                 </Link>
               );

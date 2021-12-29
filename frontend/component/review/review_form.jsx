@@ -46,11 +46,6 @@ class ReviewForm extends React.Component {
 
     return (
       <div className="review-form-container">
-        {this.props.currentUser ? (
-          <div onClick={() => this.handleForm()}>
-            {this.state.hideForm ? <button className="close-form">Cancel</button> : <button className="create-form">Create Review</button>}
-          </div>
-        ) : null}
         {this.state.hideForm ? (
           <form onSubmit={this.handleSubmit} className="review-form">
             <div className="form-rating">
@@ -79,6 +74,17 @@ class ReviewForm extends React.Component {
               Add review
             </button>
           </form>
+        ) : null}
+        {this.props.currentUser ? (
+          <div className="cancel-create-review" onClick={() => this.handleForm()}>
+            {this.state.hideForm ? (
+              <div className="cancel-btn">
+                <button className="close-form">Cancel</button>
+              </div>
+            ) : (
+              <button className="create-form">Create Review</button>
+            )}
+          </div>
         ) : null}
       </div>
     );

@@ -152,7 +152,7 @@ product5 = Product.create!(
   category_id: category3.id
 )
 
-product5.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/cow.png'), filename: 'cow.png')
+product5.photo.attach(io: URI.open('https://emmtsy-seeds.s3.us-west-1.amazonaws.com/cow.jpg'), filename: 'cow.jpg')
 
 product6 = Product.create!(
   seller_id: user7.id,
