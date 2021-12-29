@@ -35,8 +35,8 @@ class Footer extends React.Component {
             </div>
 
             <div className="footer-help info">
-              <h2>Contacts</h2>
-              <p>emmetthe26@gmail.com</p>
+              <h2>Socials</h2>
+             
 
               <div className="footer-icon-section">
                 <div className="footer-logo-container">

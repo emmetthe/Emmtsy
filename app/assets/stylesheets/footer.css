@@ -107,19 +107,19 @@
 
 .footer-icon-section {
   display: flex;
-  /* height: 30%; */
-  margin-top: 25px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .footer-logo-container {
   display: flex;
+  width: 45%;
+  justify-content: space-between;
 }
 
 .footer-logo-container > a > img {
   height: 30px;
   width: 30px;
-  padding: 0px 5px 0px 3px;
-  margin: 5px;
 }
 
 .footer-logo-container > a > img:hover {
