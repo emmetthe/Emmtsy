@@ -80,10 +80,10 @@
 .search-results-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   margin: 5px;
   width: 100%;
+  min-height: 62vh;
 }
 
 .search-result-items {
@@ -93,7 +93,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 70%;
-  margin: 10px;
+  margin: 15px 10px;
 }
 
 .searched-product {
