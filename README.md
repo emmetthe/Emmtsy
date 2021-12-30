@@ -3,6 +3,8 @@
 
 Emmtsy is a full-stack web application based on Etsy, a website for selling/buying custom handmade goods
 
+![alt text](https://github.com/emmetthe/Emmtsy/blob/main/app/assets/images/demo.gif)
+
 ## Technologies Used
 Emmtsy was built with:
 * Ruby on Rails
