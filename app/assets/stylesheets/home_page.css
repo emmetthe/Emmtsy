@@ -40,7 +40,7 @@
   justify-content: center;
   font-weight: 300;
   line-height: 56px;
-  font-size: 52px;
+  font-size: 3.25rem;
   font-family: 'Guardian-EgypTT';
   padding-top: 2%;
   height: 200px;
@@ -222,6 +222,10 @@
 .home-mid-main {
   width: 30%;
   display: flex;
+}
+
+.home-mid-link-main {
+  width: 100%;
 }
 
 .home-pics-main {
