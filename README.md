@@ -29,7 +29,3 @@ Emmtsy was built with:
 ### Search
 * Users can search for items based on product name
 * Search page will display all relevant results related to the search input
-
-## Future Implemenations
-* Allow users to search for items by category
-* Allow users to checkout, clearing their cart
