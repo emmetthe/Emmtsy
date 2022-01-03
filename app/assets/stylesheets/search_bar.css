@@ -75,6 +75,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100vw;
+  min-height: 19vw;
 }
 
 .search-results-container {
