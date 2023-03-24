@@ -1,6 +1,6 @@
 databases:
   - name: emmtsy
-    user: etsy-clone_development
+    user: emmtsy
     plan: free
     region: oregon
 
