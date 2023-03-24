@@ -75,11 +75,12 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
+  production:
   <<: *default
-  database: etsy-clone_production
-  username: etsy-clone
-  password: <%= ENV['ETSY-CLONE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+#
+# production:
+#   <<: *default
+#   database: etsy-clone_production
+#   username: etsy-clone
+#   password: <%= ENV['ETSY-CLONE_DATABASE_PASSWORD'] %>
