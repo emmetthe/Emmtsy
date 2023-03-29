@@ -44,12 +44,13 @@
   border-left: 0;
   width: 8%;
   background-color: rgb(244, 244, 244);
-  height: 49px;
+  height: 51px;
   border-color: #222222;
+  margin-left: -2px;
 }
 
 .search-img {
-  width: 40%;
+  width: 64%;
 }
 
 .searched-img {
