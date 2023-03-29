@@ -1,5 +1,5 @@
 # Emmtsy
-[Live Demo](https://emmtsy.herokuapp.com/?#/)
+[Live Demo](https://emmtsy.onrender.com/#/)
 
 Emmtsy is a full-stack web application based on Etsy, a website for selling/buying custom handmade goods
 
