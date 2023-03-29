@@ -18,6 +18,14 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         }
+      },
+      {
+        loader: require.resolve('eslint-loader'),
+        options: {
+            formatter: eslintFormatter,
+            eslintPath: require.resolve('eslint'),
+            emitWarning: true,
+        },
       }
     ]
   },
