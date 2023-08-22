@@ -5,6 +5,7 @@
     "@babel/preset-env": "^7.14.9",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "jquery": "^3.6.4",
     "masonry-layout": "^4.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -37,7 +38,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w --mode=development",
-    "build": "npm install && npm run build",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
     "postinstall": "webpack"
   },
   "repository": {

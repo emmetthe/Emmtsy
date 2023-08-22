@@ -1,0 +1,118 @@
+/* search */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+
+.search-form-container {
+  display: flex;
+  width: 40%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar {
+  width: 100%;
+  padding-left: 10px;
+  border-top-left-radius: 96px;
+  border-bottom-left-radius: 96px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  box-shadow: none;
+  background: transparent;
+  line-height: 1.75rem;
+  margin-left: 20px;
+  background-color: rgb(244, 244, 244);
+  height: 100%;
+  font-size: 1.05rem;
+  border-color: #222222;
+  outline: none;
+}
+
+.search-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 96px;
+  border-bottom-right-radius: 96px;
+  border-left: 0;
+  width: 8%;
+  background-color: rgb(244, 244, 244);
+  height: 51px;
+  border-color: #222222;
+  margin-left: -2px;
+}
+
+.search-img {
+  width: 64%;
+}
+
+.searched-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+
+.searched-img:hover {
+  box-shadow: 0 0 8px 2px rgba(209, 208, 208, 0.795);
+}
+
+/* search results */
+
+.search-container-item {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+
+.empty-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 19vw;
+}
+
+.search-results-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px;
+  width: 100%;
+  min-height: 62vh;
+}
+
+.search-result-items {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 15px 10px;
+}
+
+.searched-product {
+  width: 20%;
+  margin: 5px;
+  font-size: 1rem;
+}
+
+.search-product-name {
+  margin: 10px 0;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-product-price {
+  font-weight: bold;
+}

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :update, :destroy]
     resources :categories, only: [:index, :create, :show]
   end
-  root to: "static_pages#root"
+  root to: "static_pages#frontend"
+  # get '*path', to: 'static_pages#frontend'
 end
